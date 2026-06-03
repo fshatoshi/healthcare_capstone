@@ -1,0 +1,1 @@
+﻿// Empty state with icon and message for lists with no data

@@ -1,0 +1,1 @@
+﻿// ADR: MongoDB primary DB (document model), Redis for session and cache

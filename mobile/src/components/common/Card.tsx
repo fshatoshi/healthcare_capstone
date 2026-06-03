@@ -1,0 +1,1 @@
+﻿// Generic card container with optional shadow and border

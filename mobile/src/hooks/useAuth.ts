@@ -1,0 +1,1 @@
+﻿// Hook: current user, login/logout helpers, role-based access checks

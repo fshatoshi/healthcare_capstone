@@ -1,0 +1,1 @@
+﻿// Risk level badge: LOW=green, MODERATE=amber, HIGH=red, CRITICAL=dark red

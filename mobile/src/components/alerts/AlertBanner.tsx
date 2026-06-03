@@ -1,0 +1,1 @@
+﻿// In-app alert banner showing anomaly with severity color

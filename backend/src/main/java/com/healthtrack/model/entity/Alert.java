@@ -1,0 +1,1 @@
+// @Document: type, targetActor, message, triggeredAt, isAcknowledged

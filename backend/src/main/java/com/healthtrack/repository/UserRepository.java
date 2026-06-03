@@ -1,0 +1,1 @@
+// MongoRepository<User>: findByEmail, existsByEmail

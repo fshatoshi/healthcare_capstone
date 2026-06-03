@@ -1,0 +1,1 @@
+﻿// HealthRecord, ManualEntry, SleepRecord, HeartRateRecord interfaces

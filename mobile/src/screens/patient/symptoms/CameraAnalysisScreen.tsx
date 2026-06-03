@@ -1,0 +1,1 @@
+﻿// Camera capture for CV analysis - disclaimer shown before capture

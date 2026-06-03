@@ -1,0 +1,1 @@
+﻿// Steps and active minutes bar chart

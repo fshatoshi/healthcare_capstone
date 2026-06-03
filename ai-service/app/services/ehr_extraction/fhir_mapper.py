@@ -1,0 +1,1 @@
+﻿# Maps FHIR R4 resource JSON to internal HealthRecord schema

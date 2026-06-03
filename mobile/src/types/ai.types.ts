@@ -1,0 +1,1 @@
+﻿// AIAnalysisResult, Recommendation, Alert interfaces

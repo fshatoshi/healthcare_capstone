@@ -1,0 +1,1 @@
+// Interface: patient list, validate AI, notes, prescriptions

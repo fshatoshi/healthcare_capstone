@@ -1,0 +1,1 @@
+﻿// SQLite wrapper - store and sync health records when offline

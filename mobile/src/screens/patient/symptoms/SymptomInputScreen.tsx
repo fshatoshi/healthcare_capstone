@@ -1,0 +1,1 @@
+﻿// Symptom description - text, voice recording, or image upload

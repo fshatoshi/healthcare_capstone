@@ -1,0 +1,1 @@
+﻿// i18n setup with i18next and device language auto-detection

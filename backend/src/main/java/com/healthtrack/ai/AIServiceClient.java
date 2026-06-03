@@ -1,0 +1,1 @@
+// WebClient bean pointing to Python AI microservice base URL

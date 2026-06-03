@@ -1,0 +1,1 @@
+﻿# Base64 encode/decode, image format validation helpers

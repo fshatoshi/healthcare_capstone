@@ -1,0 +1,1 @@
+﻿# POST /cv/analyze - receives image bytes, returns CV indicators for skin/eyes/posture

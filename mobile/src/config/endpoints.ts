@@ -1,0 +1,1 @@
+﻿// All API endpoint paths as named constants

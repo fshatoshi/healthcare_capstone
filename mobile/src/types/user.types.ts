@@ -1,0 +1,1 @@
+﻿// User, Patient, Doctor, Admin TypeScript interfaces

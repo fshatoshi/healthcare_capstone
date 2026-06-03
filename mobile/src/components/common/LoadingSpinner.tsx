@@ -1,0 +1,1 @@
+﻿// Centered loading indicator with optional overlay

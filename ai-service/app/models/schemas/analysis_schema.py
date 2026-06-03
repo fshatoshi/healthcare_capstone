@@ -1,0 +1,1 @@
+﻿# Pydantic schemas: AnalysisRequest, AnalysisResult, RiskLevel enum

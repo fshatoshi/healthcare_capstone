@@ -1,0 +1,1 @@
+// Maps HealthRecord list to AI service payload format

@@ -1,0 +1,1 @@
+// GET /api/notifications, PATCH /mark-read

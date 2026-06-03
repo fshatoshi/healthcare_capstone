@@ -1,0 +1,1 @@
+// MinIO client bean for file storage

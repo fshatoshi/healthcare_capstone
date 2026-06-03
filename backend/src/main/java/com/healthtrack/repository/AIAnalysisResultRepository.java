@@ -1,0 +1,1 @@
+// MongoRepository<AIAnalysisResult>: findByFileIdOrderByGeneratedAtDesc

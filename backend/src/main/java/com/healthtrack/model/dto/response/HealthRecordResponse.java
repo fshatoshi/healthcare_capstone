@@ -1,0 +1,1 @@
+// Flattened record safe for API response

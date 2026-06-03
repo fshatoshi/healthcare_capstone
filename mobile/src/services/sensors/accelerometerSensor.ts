@@ -1,0 +1,1 @@
+﻿// Step counting and activity detection via device accelerometer

@@ -1,0 +1,1 @@
+﻿# Loads scikit-learn pipelines and TF Lite models at startup - singleton pattern

@@ -1,0 +1,1 @@
+﻿# POST /ehr/extract - receives raw EHR text or JSON, returns structured HealthRecord list

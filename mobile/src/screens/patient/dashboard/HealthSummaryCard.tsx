@@ -1,0 +1,1 @@
+﻿// Card showing one health metric with sparkline

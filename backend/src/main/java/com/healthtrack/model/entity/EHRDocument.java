@@ -1,0 +1,1 @@
+// @Document(ehr_documents): fileId, fileType, parsedContent, parseStatus

@@ -1,0 +1,1 @@
+﻿# MediaPipe face mesh + CNN for skin and eye anomaly scoring

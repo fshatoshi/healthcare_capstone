@@ -1,0 +1,1 @@
+﻿// Queue of pending sync operations that fire when connection is restored

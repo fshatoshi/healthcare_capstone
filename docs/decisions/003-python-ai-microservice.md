@@ -1,0 +1,1 @@
+﻿// ADR: Python microservice for AI - keeps ML dependencies away from JVM

@@ -1,0 +1,1 @@
+// @Document: resultId, analysisType, confidence, riskLevel, summary, generatedAt

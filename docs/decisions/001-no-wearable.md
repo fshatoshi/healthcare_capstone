@@ -1,0 +1,1 @@
+﻿// ADR: No wearable dependency - all data from manual entry, phone sensors, or EHR import

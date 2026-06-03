@@ -1,0 +1,1 @@
+﻿// Intercepts actions when offline and queues them for later sync

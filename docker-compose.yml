@@ -1,0 +1,55 @@
+﻿services:
+  mongodb:
+    image: mongo:7.0
+    container_name: healthtrack-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./infra/mongo-data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: healthtrack
+      MONGO_INITDB_ROOT_PASSWORD: changeme
+      MONGO_INITDB_DATABASE: healthtrackdb
+
+  redis:
+    image: redis:7.2-alpine
+    container_name: healthtrack-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    command: redis-server --requirepass changeme
+
+  minio:
+    image: minio/minio:RELEASE.2024-03-07T00-43-48Z
+    container_name: healthtrack-minio
+    restart: unless-stopped
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - ./infra/minio-data:/data
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: changeme
+    command: server /data --console-address ":9001"
+
+  ai-service:
+    build:
+      context: ./ai-service
+    container_name: healthtrack-ai
+    restart: unless-stopped
+    ports:
+      - "8001:8001"
+
+  backend:
+    build:
+      context: ./server
+    container_name: healthtrack-backend
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb
+      - redis
+      - ai-service

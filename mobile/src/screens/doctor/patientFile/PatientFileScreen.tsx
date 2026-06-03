@@ -1,0 +1,1 @@
+﻿// Full patient file - records timeline, AI analyses, snapshots

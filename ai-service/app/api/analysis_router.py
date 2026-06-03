@@ -1,0 +1,1 @@
+﻿# POST /analyze - receives health records, returns AI analysis with risk level and recommendations

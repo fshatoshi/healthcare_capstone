@@ -1,0 +1,1 @@
+﻿// Hook: camera permission request and capture flow abstraction

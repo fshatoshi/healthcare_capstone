@@ -1,0 +1,1 @@
+﻿// Shared risk level constants and color mappings

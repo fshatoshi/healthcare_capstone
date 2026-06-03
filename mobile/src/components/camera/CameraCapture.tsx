@@ -1,0 +1,1 @@
+﻿// Camera wrapper handling permissions, capture, and preview

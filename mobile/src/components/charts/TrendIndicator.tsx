@@ -1,0 +1,1 @@
+﻿// Small up/down/stable arrow with color encoding

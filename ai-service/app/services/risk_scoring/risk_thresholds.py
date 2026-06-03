@@ -1,0 +1,1 @@
+﻿# Configurable thresholds per metric: HR, glucose, sleep, blood pressure

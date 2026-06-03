@@ -1,0 +1,1 @@
+﻿# Pydantic schemas: CVRequest (image_b64, target), CVResult (indicators, score)

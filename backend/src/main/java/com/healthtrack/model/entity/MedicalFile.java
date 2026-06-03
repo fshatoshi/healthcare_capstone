@@ -1,0 +1,1 @@
+// @Document(medical_files): fileId, patientId, status, createdAt, lastUpdated

@@ -1,0 +1,1 @@
+﻿// EHR/medical document import - PDF picker, FHIR URL, HL7 file

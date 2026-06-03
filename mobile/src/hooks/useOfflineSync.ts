@@ -1,0 +1,1 @@
+﻿// Hook: exposes sync status and manual trigger

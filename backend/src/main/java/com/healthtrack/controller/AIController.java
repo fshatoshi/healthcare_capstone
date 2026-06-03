@@ -1,0 +1,1 @@
+// POST /api/ai/analyze - trigger analysis, GET /api/ai/results/{id}

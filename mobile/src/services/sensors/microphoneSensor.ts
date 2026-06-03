@@ -1,0 +1,1 @@
+﻿// Voice input for symptom description feature

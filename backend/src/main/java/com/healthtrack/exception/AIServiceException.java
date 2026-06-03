@@ -1,0 +1,1 @@
+// Thrown when Python AI microservice is unavailable or returns error

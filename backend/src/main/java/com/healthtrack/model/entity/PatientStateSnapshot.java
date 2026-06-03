@@ -1,0 +1,1 @@
+// @Document: snapshotId, fileId, riskScore, trend enum, keyIndicators map

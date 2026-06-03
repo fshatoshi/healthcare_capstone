@@ -1,0 +1,1 @@
+﻿// PWA service worker - cache-first for static assets, network-first for API calls

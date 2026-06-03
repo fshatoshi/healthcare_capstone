@@ -1,0 +1,1 @@
+﻿# Explicit rules: HR > 100 plus low sleep triggers rest recommendation

@@ -1,0 +1,67 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.0'
+}
+
+group = 'com.healthtrack'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+// Ce bloc règle l'erreur "Cannot mutate dependency attributes"
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // 1. LOMBOK (Gestion propre de la compilation)
+    compileOnly 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
+
+    // 2. SPRING BOOT STARTERS (Versions fixées pour éviter les conflits)
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.3.0'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb:3.3.0'
+    implementation 'org.springframework.boot:spring-boot-starter-security:3.3.0'
+    implementation 'org.springframework.boot:spring-boot-starter-validation:3.3.0'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux:3.3.0'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis:3.3.0'
+    implementation 'org.springframework.boot:spring-boot-starter-cache:3.3.0'
+
+    // 3. SECURITE & JWT
+    implementation 'io.jsonwebtoken:jjwt-api:0.12.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.5'
+
+    // 4. SANTE & DOCUMENTS (FHIR, Tika)
+    implementation 'ca.uhn.hapi.fhir:hapi-fhir-base:7.0.0'
+    implementation 'ca.uhn.hapi.fhir:hapi-fhir-structures-r4:7.0.0'
+    implementation 'org.apache.tika:tika-core:2.9.1'
+
+    // 5. CLOUD & STOCKAGE (MinIO, Firebase)
+    implementation 'com.google.firebase:firebase-admin:9.3.0'
+    implementation 'io.minio:minio:8.5.9'
+
+    // 6. TESTS
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.3.0'
+    testImplementation 'org.springframework.security:spring-security-test:3.3.0'
+    testCompileOnly 'org.projectlombok:lombok:1.18.32'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.32'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+springBoot {
+    mainClass = 'com.healthtrack.healthtrack_api.HealthtrackApiApplication'
+}

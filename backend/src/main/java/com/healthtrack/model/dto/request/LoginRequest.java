@@ -1,0 +1,1 @@
+// { email: String, password: String }

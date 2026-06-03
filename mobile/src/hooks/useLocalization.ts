@@ -1,0 +1,1 @@
+﻿// Hook: t() translation helper and current language state

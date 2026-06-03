@@ -1,0 +1,1 @@
+﻿// Bar chart for sleep duration and quality score

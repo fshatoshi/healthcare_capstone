@@ -1,0 +1,1 @@
+﻿// API base URL, timeout, pagination size, risk thresholds

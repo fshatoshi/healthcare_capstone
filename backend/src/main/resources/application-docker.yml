@@ -1,0 +1,10 @@
+﻿spring:
+  data:
+    mongodb:
+      uri: mongodb://healthtrack:changeme@mongodb:27017/healthtrackdb
+  redis:
+    host: redis
+ai-service:
+  base-url: http://ai-service:8001
+minio:
+  endpoint: http://minio:9000

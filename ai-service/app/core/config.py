@@ -1,0 +1,1 @@
+﻿# Settings loaded via pydantic-settings: mongo URI, model paths, thresholds

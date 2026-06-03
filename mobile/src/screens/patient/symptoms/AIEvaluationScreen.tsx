@@ -1,0 +1,1 @@
+﻿// Displays AI evaluation result with risk level and recommendations

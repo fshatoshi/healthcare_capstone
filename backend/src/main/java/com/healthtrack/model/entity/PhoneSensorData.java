@@ -1,0 +1,1 @@
+// Embedded: sensorType enum, rawValue JSON, deviceModel, capturedAt

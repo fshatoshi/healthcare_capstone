@@ -1,0 +1,1 @@
+// Decides who receives alert (patient, doctor, or both) and dispatches

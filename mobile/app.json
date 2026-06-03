@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "HealthTrack AI",
+    "slug": "healthtrack-ai",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/logo_app.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/images/logo_app.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0D2318"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.healthtrack.ai.app",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/logo_app.png",
+        "backgroundColor": "#0D2318"
+      },
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_FINE_LOCATION"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/images/logo_app.png"
+    },
+    "plugins": [
+      "expo-font",
+      "expo-secure-store",
+      "expo-sqlite"
+    ]
+  }
+}

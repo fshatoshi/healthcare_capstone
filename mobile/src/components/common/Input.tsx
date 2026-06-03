@@ -1,0 +1,1 @@
+﻿// Text input with label, error state, and RTL support for Arabic

@@ -1,0 +1,1 @@
+﻿// TypeScript route param types for all navigators
