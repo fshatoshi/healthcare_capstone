@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>rapport_membre3.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="rapport-de-projet-fin-détudes---sections-membre-3">Rapport de Projet Fin d'Études - Sections Membre 3</h1>
+<h2 id="gestion-documentation-et-finitions">Gestion, Documentation et Finitions</h2>
+<hr>
+<h1 id="parties-préliminaires">PARTIES PRÉLIMINAIRES</h1>
+<h2 id="dédicaces">DÉDICACES</h2>
+<p><em>(Chaque membre de l'équipe peut insérer sa dédicace personnelle ci-dessous. Voici une structure type pour les trois membres du groupe) :</em></p>
+<h3 id="dédicace-de-nom-du-membre-1">Dédicace de [Nom du Membre 1]</h3>
+<p><em>À mes chers parents,</em>
+<em>Pour leur amour inconditionnel, leurs sacrifices inestimables et leur soutien indéfectible tout au long de mon parcours universitaire. Ce travail est le fruit de leur dévouement et de leurs prières.</em>
+<em>À mes frères et sœurs, ainsi qu'à mes chers amis pour leur encouragement constant.</em></p>
+<h3 id="dédicace-de-nom-du-membre-2">Dédicace de [Nom du Membre 2]</h3>
+<p><em>À ma famille et mes proches,</em>
+<em>Pour leur présence chaleureuse, leur patience et leur confiance tout au long de mes études. Ce travail témoigne de ma profonde gratitude.</em>
+<em>À tous ceux qui m'ont soutenu de près ou de loin.</em></p>
+<h3 id="dédicace-de-nom-du-membre-3">Dédicace de [Nom du Membre 3]</h3>
+<p><em>À mes parents,</em>
+<em>Qui m'ont guidé sur le chemin de l'apprentissage avec amour et patience, et qui m'ont appris à toujours persévérer. Ce travail est dédié à leur générosité.</em>
+<em>À mes professeurs pour la transmission de leur savoir et leur bienveillance.</em></p>
+<hr>
+<h2 id="remerciements">REMERCIEMENTS</h2>
+<p>Au terme de ce travail de fin d’études, nous tenons à exprimer notre profonde gratitude et nos sincères remerciements à toutes les personnes qui ont contribué à la réussite de ce projet de capstone.</p>
+<p>Nous adressons nos remerciements les plus chaleureux à notre coordinateur de projet et à l'ensemble du corps professoral pour leur encadrement de qualité, leurs conseils précieux et leur disponibilité tout au long de cette expérience académique et technique.</p>
+<p>Nous tenons également à exprimer notre reconnaissance aux membres du jury qui ont accepté d'évaluer ce travail et d'apporter leurs remarques constructives afin d'en améliorer la qualité.</p>
+<p>Enfin, nous remercions chaleureusement nos collègues de projet pour leur engagement, leur esprit d’équipe et la synergie dont ils ont fait preuve tout au long des différents sprints. Ce travail est le résultat d'un effort collectif soutenu et d'une passion partagée pour l'innovation technologique au service de la santé.</p>
+<hr>
+<h2 id="résumé">RÉSUMÉ</h2>
+<p><strong>Résumé</strong>
+Le projet <strong>HealthTrack AI</strong> est une plateforme mobile et web innovante de suivi médical et de bien-être, spécialement conçue pour répondre aux besoins du secteur de la santé au Maroc. Ce projet vise à combler le fossé communicationnel et opérationnel entre les patients, les professionnels de la santé et les administrateurs médicaux. En s'appuyant sur une architecture moderne, sécurisée et pilotée par l'intelligence artificielle, l'application permet aux patients d'enregistrer et de suivre en temps réel leurs constantes vitales (fréquence cardiaque, pression artérielle, glycémie, sommeil) tout en téléchargeant de manière sécurisée leurs dossiers médicaux (EHR) sur un serveur d'objets privé MinIO (S3). Un module d'IA en Python analyse ces données pour détecter les anomalies et évaluer les niveaux de risque clinique (faible, modéré, élevé), facilitant ainsi le tri et la prise de décision pour les médecins à travers un tableau de bord intuitif. L'interface mobile, développée sous React Native avec Expo, adopte une charte graphique premium inspirée du patrimoine marocain (« Refined Moroccan Luxury »). Le backend, propulsé par Spring Boot 3 et MongoDB, garantit une sécurité stricte grâce à une authentification JWT et une gestion des sessions sans état.</p>
+<p><strong>Mots-clés :</strong> Suivi médical, Intelligence Artificielle, React Native, Spring Boot, MongoDB, MinIO, Risque clinique, Patrimoine marocain.</p>
+<hr>
+<h2 id="abstract">ABSTRACT</h2>
+<p><strong>Abstract</strong>
+The <strong>HealthTrack AI</strong> project is an innovative mobile and web platform for health and wellness monitoring, specifically designed to meet the requirements of the healthcare sector in Morocco. The system aims to bridge the communication and operational gap between patients, healthcare providers, and medical administrators. Built on a modern, secure, and AI-driven architecture, the application enables patients to record and track their vital signs (heart rate, blood pressure, glucose, sleep) in real-time while securely uploading clinical documents (EHR) to a private MinIO (S3) object storage server. A Python-based AI microservice analyzes this data to detect anomalies and stratify clinical risk levels (low, moderate, high), thereby facilitating patient triaging and clinical decision-making for doctors via an intuitive workspace dashboard. The mobile interface, developed using React Native and Expo, features a premium visual design inspired by Moroccan heritage (&quot;Refined Moroccan Luxury&quot;). The backend, powered by Spring Boot 3 and MongoDB, ensures robust security through JWT authentication and stateless session management.</p>
+<p><strong>Keywords:</strong> Healthcare monitoring, Artificial Intelligence, React Native, Spring Boot, MongoDB, MinIO, Clinical risk stratification, Moroccan heritage.</p>
+<hr>
+<h2 id="sommaire">SOMMAIRE</h2>
+<ul>
+<li><strong>Dédicaces</strong></li>
+<li><strong>Remerciements</strong></li>
+<li><strong>Résumé</strong></li>
+<li><strong>Abstract</strong></li>
+<li><strong>Sommaire</strong></li>
+<li><strong>Liste des acronymes</strong></li>
+<li><strong>Liste des figures</strong></li>
+<li><strong>Liste des tableaux</strong></li>
+<li><strong>Introduction générale</strong></li>
+<li><strong>Chapitre I. Contexte général du projet</strong>
+<ul>
+<li>
+<ol>
+<li>Présentation du projet</li>
+</ol>
+<ul>
+<li>1.1. Contexte (cadrage du projet)</li>
+<li>1.2. Problématique</li>
+<li>1.3. Objectifs</li>
+</ul>
+</li>
+<li>
+<ol start="2">
+<li>Conduite du projet</li>
+</ol>
+<ul>
+<li>2.1. Méthodologies utilisées (Gestion et développement)</li>
+<li>2.2. Grands choix techniques du projet</li>
+<li>2.3. Ressources humaines du projet</li>
+<li>2.4. Planification du projet (Sprints et diagramme de Gantt)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Chapitre II. Étude préliminaire</strong>
+<ul>
+<li>
+<ol>
+<li>Présentation de l’existant</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Analyse de l’existant (limites et critiques)</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>Solution proposée</li>
+</ol>
+<ul>
+<li>3.1. Présentation de la solution</li>
+<li>3.2. Identification des acteurs</li>
+<li>3.3. Diagramme de contexte</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Chapitre III. Spécifications générales</strong>
+<ul>
+<li>
+<ol>
+<li>Spécifications fonctionnelles</li>
+</ol>
+<ul>
+<li>1.1. Identification des fonctionnalités du système</li>
+<li>1.2. Identification des cas d’utilisation</li>
+<li>1.3. Identification des sprints</li>
+</ul>
+</li>
+<li>
+<ol start="2">
+<li>Spécifications techniques</li>
+</ol>
+<ul>
+<li>2.1. Architecture technique</li>
+<li>2.2. Exigences techniques</li>
+<li>2.3. Benchmark technique</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Chapitre IV. Étude conceptuelle</strong>
+<ul>
+<li>
+<ol>
+<li>Découpage modulaire</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Module I : Gestion de l'authentification et des profils (Sprint 1)</li>
+</ol>
+<ul>
+<li>2.1. Diagramme de cas d’utilisation</li>
+<li>2.2. Tableau descriptif des histoires utilisateur</li>
+<li>2.3. Diagramme de séquences</li>
+<li>2.4. Diagramme de classes</li>
+</ul>
+</li>
+<li>
+<ol start="3">
+<li>Module II : Suivi des constantes et dossier patient (Sprint 2)</li>
+</ol>
+<ul>
+<li>3.1. Diagramme de cas d’utilisation</li>
+<li>3.2. Tableau descriptif des histoires utilisateur</li>
+<li>3.3. Diagramme de séquences</li>
+<li>3.4. Diagramme de classes</li>
+</ul>
+</li>
+<li>
+<ol start="4">
+<li>Module III : Analyse prédictive par l'IA et alertes (Sprint 3)</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>Chapitre V. Réalisation et mise en œuvre</strong>
+<ul>
+<li>
+<ol>
+<li>Outils et technologies utilisés</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Structure globale du projet</li>
+</ol>
+<ul>
+<li>2.1. Structure du Frontend (React Native)</li>
+<li>2.2. Structure du Backend (Spring Boot &amp; Python AI)</li>
+</ul>
+</li>
+<li>
+<ol start="3">
+<li>Interfaces (Captures d'écran de la solution avec description textuelle)</li>
+</ol>
+<ul>
+<li>3.1. Workspace Authentification</li>
+<li>3.2. Workspace Patient</li>
+<li>3.3. Workspace Médecin</li>
+<li>3.4. Workspace Administrateur</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Conclusion générale et perspectives</strong></li>
+<li><strong>Bibliographie</strong></li>
+<li><strong>Annexes</strong></li>
+</ul>
+<hr>
+<h2 id="liste-des-acronymes">LISTE DES ACRONYMES</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Acronyme</th>
+<th style="text-align:left">Définition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>API</strong></td>
+<td style="text-align:left">Application Programming Interface</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>EHR</strong></td>
+<td style="text-align:left">Electronic Health Record (Dossier Médical Électronique)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>FHIR</strong></td>
+<td style="text-align:left">Fast Healthcare Interoperability Resources (Norme d'interopérabilité en santé)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>JWT</strong></td>
+<td style="text-align:left">JSON Web Token</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>S3</strong></td>
+<td style="text-align:left">Simple Storage Service (Technologie de stockage objet)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>FCM</strong></td>
+<td style="text-align:left">Firebase Cloud Messaging</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>REST</strong></td>
+<td style="text-align:left">Representational State Transfer</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>NLP</strong></td>
+<td style="text-align:left">Natural Language Processing (Traitement Automatique du Langage Naturel)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>JSON</strong></td>
+<td style="text-align:left">JavaScript Object Notation</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>UI</strong></td>
+<td style="text-align:left">User Interface (Interface Utilisateur)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>UX</strong></td>
+<td style="text-align:left">User Experience (Expérience Utilisateur)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>DBMS</strong></td>
+<td style="text-align:left">Database Management System (Système de Gestion de Base de Données)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>CRUD</strong></td>
+<td style="text-align:left">Create, Read, Update, Delete</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>MVC</strong></td>
+<td style="text-align:left">Model-View-Controller</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>SVG</strong></td>
+<td style="text-align:left">Scalable Vector Graphics</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>EHR</strong></td>
+<td style="text-align:left">Electronic Health Record</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="liste-des-figures">LISTE DES FIGURES</h2>
+<ol>
+<li><em>Figure 1.1 : Structure organisationnelle de l'équipe de projet</em></li>
+<li><em>Figure 1.2 : Diagramme de Gantt prévisionnel du projet</em></li>
+<li><em>Figure 2.1 : Diagramme de contexte global du système</em></li>
+<li><em>Figure 3.1 : Schéma de l'architecture technique microservices</em></li>
+<li><em>Figure 4.1 : Diagramme de cas d'utilisation général</em></li>
+<li><em>Figure 4.2 : Diagramme de séquences de l'authentification</em></li>
+<li><em>Figure 4.3 : Diagramme de classes du domaine médical</em></li>
+<li><em>Figure 5.1 : Arborescence du projet mobile React Native</em></li>
+<li><em>Figure 5.2 : Interface de démarrage (Splash Screen)</em></li>
+<li><em>Figure 5.3 : Interface de Connexion (Login)</em></li>
+<li><em>Figure 5.4 : Interface d'Inscription en 2 étapes (Register)</em></li>
+<li><em>Figure 5.5 : Tableau de bord du Patient (Dashboard)</em></li>
+<li><em>Figure 5.6 : Formulaire de Saisie Manuelle des Constantes</em></li>
+<li><em>Figure 5.7 : Espace d'Importation EHR et Documents Cliniques</em></li>
+<li><em>Figure 5.8 : Historique Médical Interactif du Patient</em></li>
+<li><em>Figure 5.9 : Saisie multimodale des symptômes par IA (Text, Voix, Image)</em></li>
+<li><em>Figure 5.10 : Localisateur des Services de Santé de Proximité</em></li>
+<li><em>Figure 5.11 : Page d'accueil du Médecin (Liste des patients)</em></li>
+<li><em>Figure 5.12 : Dossier Clinique Patient (Vue Médecin)</em></li>
+<li><em>Figure 5.13 : Interface de validation et de correction de l'IA (AI Review)</em></li>
+<li><em>Figure 5.14 : Tableau de bord Administrateur (Statistiques globales)</em></li>
+<li><em>Figure 5.15 : Interface de Configuration des Modules d'IA</em></li>
+</ol>
+<p><em>(Note : Les figures listées ci-dessus correspondent aux schémas conceptuels et captures d'écran intégrés dans le rapport final).</em></p>
+<hr>
+<h2 id="liste-des-tableaux">LISTE DES TABLEAUX</h2>
+<ol>
+<li><em>Tableau 1.1 : Tableau de répartition des ressources humaines et rôles</em></li>
+<li><em>Tableau 1.2 : Planification détaillée des Sprints de développement</em></li>
+<li><em>Tableau 3.1 : Tableau comparatif (Benchmark) des solutions de stockage objet</em></li>
+<li><em>Tableau 4.1 : Description textuelle de l'histoire utilisateur « Renseigner une constante »</em></li>
+<li><em>Tableau 4.2 : Description textuelle de l'histoire utilisateur « Corriger un diagnostic IA »</em></li>
+<li><em>Tableau 5.1 : Matrice de correspondance des couleurs de la charte graphique</em></li>
+</ol>
+<hr>
+<hr>
+<h1 id="chapitre-i---conduite-du-projet-section-2">CHAPITRE I - CONDUITE DU PROJET (SECTION 2)</h1>
+<h2 id="2-conduite-du-projet">2. CONDUITE DU PROJET</h2>
+<h3 id="21-méthodologies-utilisées-gestion-et-développement">2.1. Méthodologies utilisées (Gestion et développement)</h3>
+<p>Pour mener à bien ce projet d’envergure associant développement mobile multiplateforme, logique backend d'entreprise et intelligence artificielle, nous avons adopté des méthodologies rigoureuses axées sur la flexibilité, la transparence et la qualité logicielle.</p>
+<h4 id="211-gestion-de-projet--le-cadre-agile-scrum">2.1.1. Gestion de projet : Le Cadre Agile SCRUM</h4>
+<p>Le développement du projet s'est structuré autour de la méthodologie <strong>Scrum</strong>, particulièrement adaptée aux projets de développement logiciel itératifs et incrémentaux.</p>
+<ul>
+<li><strong>Les Sprints :</strong> Le projet a été divisé en <strong>sprints de 2 semaines</strong>. Chaque sprint avait pour objectif de livrer un incrément de produit potentiellement opérationnel et testé.</li>
+<li><strong>Les Cérémonies Scrum :</strong>
+<ul>
+<li><strong>Sprint Planning :</strong> Au début de chaque sprint, l'équipe s'est réunie pour définir l'objectif du sprint (<em>Sprint Goal</em>) et sélectionner les histoires utilisateur (<em>User Stories</em>) prioritaires du <em>Backlog Produit</em> à intégrer dans le <em>Sprint Backlog</em>.</li>
+<li><strong>Daily Stand-up :</strong> Une réunion quotidienne de 15 minutes a été instaurée afin de synchroniser les activités des membres de l'équipe, de faire le point sur les tâches de la veille, les objectifs du jour et d'identifier d'éventuels obstacles.</li>
+<li><strong>Sprint Review :</strong> À la fin de chaque sprint, une démonstration des fonctionnalités terminées a été réalisée pour valider la conformité aux exigences fonctionnelles.</li>
+<li><strong>Sprint Retrospective :</strong> Cette cérémonie a permis à l'équipe d'analyser son fonctionnement interne et de définir des axes d'amélioration continue pour les sprints suivants.</li>
+</ul>
+</li>
+</ul>
+<h4 id="212-gestion-du-code-source--git-et-la-stratégie-gitflow">2.1.2. Gestion du code source : Git et la stratégie GitFlow</h4>
+<p>Pour assurer la cohérence du code produit par les différents collaborateurs sans blocage, nous avons utilisé l'outil de gestion de version <strong>Git</strong> hébergé sur <strong>GitHub</strong> en appliquant la stratégie <strong>GitFlow</strong> :</p>
+<ul>
+<li><strong>Branche <code>main</code> :</strong> Contient le code stable et testé, correspondant aux versions prêtes pour la production.</li>
+<li><strong>Branche <code>develop</code> :</strong> Branche d'intégration principale où convergent tous les développements de fonctionnalités validés.</li>
+<li><strong>Branches <code>feature/</code> :</strong> Branches temporaires créées par les développeurs pour concevoir une fonctionnalité spécifique (ex. <code>feature/patient-doctor-communication</code>). Une fois la fonctionnalité développée et testée localement, une <em>Pull Request</em> (PR) est soumise sur la branche <code>develop</code>. Une revue de code est obligatoire avant toute fusion.</li>
+</ul>
+<hr>
+<h3 id="22-grands-choix-techniques-du-projet">2.2. Grands choix techniques du projet</h3>
+<p>Les choix technologiques de HealthTrack AI ont été guidés par des impératifs de performance, de sécurité, de portabilité et de séparation claire des responsabilités architecturales.</p>
+<ul>
+<li><strong>Frontend (React Native &amp; Expo) :</strong> L'application mobile cible le grand public ainsi que les professionnels de santé. React Native a été choisi pour concevoir une application native performante et multiplateforme (iOS et Android) à partir d'une base de code unique en TypeScript. L'utilisation d'Expo (SDK 51) a grandement accéléré la configuration de l'environnement, l'intégration des capteurs et les tests en conditions réelles.</li>
+<li><strong>Backend principal (Spring Boot 3 &amp; Java 21) :</strong> Spring Boot a été sélectionné pour sa robustesse industrielle, sa gestion native de la sécurité (Spring Security) et sa facilité à modéliser des API RESTful standardisées. Java 21 apporte des optimisations majeures en termes de performances grâce aux threads virtuels.</li>
+<li><strong>Base de données principale (MongoDB) :</strong> Les données de santé (constantes physiologiques, historiques de diagnostics, profils cliniques) sont très hétérogènes et sujettes à des évolutions. Le modèle orienté document de MongoDB offre la flexibilité nécessaire pour gérer ces schémas dynamiques sans la rigidité d'une base relationnelle SQL.</li>
+<li><strong>Stockage objet (MinIO) :</strong> Les documents cliniques importés par les patients (PDF de laboratoires, clichés radiologiques) doivent être stockés de manière sécurisée et performante. MinIO, serveur de stockage objet compatible S3 auto-hébergé, permet de conserver ces fichiers volumineux localement ou sur une infrastructure privée tout en maintenant un contrôle total sur l'accès aux données.</li>
+<li><strong>Microservice IA (Python, FastAPI) :</strong> Afin de ne pas surcharger la JVM avec des dépendances lourdes liées au machine learning et au traitement de données (NLP, OCR, Vision), un microservice Python autonome a été mis en œuvre. Il expose des points de terminaison via FastAPI pour analyser les symptômes, extraire les métadonnées des PDF et calculer les scores de risque clinique.</li>
+<li><strong>Cache et Sessions (Redis) :</strong> Utilisé comme mémoire cache pour optimiser les requêtes fréquentes sur le profil des patients et pour stocker les sessions utilisateur temporaires, garantissant une réactivité maximale de l'interface mobile.</li>
+</ul>
+<hr>
+<h3 id="23-ressources-humaines-du-projet">2.3. Ressources humaines du projet</h3>
+<p>L'équipe projet est composée de trois membres, chacun possédant un rôle clé dans la conception, l'implémentation et la validation du système.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Ressource</th>
+<th style="text-align:left">Rôle Principal</th>
+<th style="text-align:left">Responsabilités Spécifiques</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Membre 1</strong></td>
+<td style="text-align:left"><strong>Ingénieur Frontend &amp; UI/UX</strong></td>
+<td style="text-align:left">- Conception graphique et ergonomique de l'application mobile sous React Native.<br>- Implémentation du système de design premium émeraude et or.<br>- Intégration des graphiques de tendances de santé et de la navigation locale.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Membre 2</strong></td>
+<td style="text-align:left"><strong>Ingénieur Backend &amp; Intégrateur IA</strong></td>
+<td style="text-align:left">- Conception et développement de l'API REST sous Spring Boot 3.<br>- Modélisation de la base de données MongoDB.<br>- Développement du microservice d'analyse IA sous Python et sa connexion avec le backend principal.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Membre 3</strong></td>
+<td style="text-align:left"><strong>Chef de Projet, QA &amp; Documentaliste</strong></td>
+<td style="text-align:left">- Suivi de la planification, gestion des réunions Scrum et coordination inter-membres.<br>- Rédaction de la documentation globale et du rapport de projet.<br>- Conception du plan de test, contrôle qualité (QA) et finitions esthétiques du produit.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="24-planification-du-projet-sprints-et-diagramme-de-gantt">2.4. Planification du projet (Sprints et diagramme de Gantt)</h3>
+<p>Le projet s'est déroulé sur une durée globale de 8 semaines, structuré en 4 sprints majeurs.</p>
+<h4 id="241-calendrier-des-sprints">2.4.1. Calendrier des Sprints</h4>
+<ul>
+<li><strong>Sprint 1 : Cadrage, Architecture et Setup (Semaines 1-2)</strong>
+<ul>
+<li>Cadrage des besoins et rédaction des spécifications fonctionnelles.</li>
+<li>Configuration des environnements de développement (Docker, Git, structures initiales Spring Boot et Expo).</li>
+<li>Mise en place de la base de données MongoDB et du serveur de stockage MinIO.</li>
+</ul>
+</li>
+<li><strong>Sprint 2 : Conception UI/UX et Maquettage Dynamique (Semaines 3-4)</strong>
+<ul>
+<li>Création de la charte graphique « Refined Moroccan Luxury » et implémentation du thème dans l'application mobile.</li>
+<li>Développement de l'ensemble des écrans d'authentification (Splash, Login, Register, Forgot Password).</li>
+<li>Maquettage fonctionnel avec données fictives (mock) des tableaux de bord Patient, Médecin et Administrateur.</li>
+</ul>
+</li>
+<li><strong>Sprint 3 : Implémentation de la Logique Métier et Intégration (Semaines 5-6)</strong>
+<ul>
+<li>Connexion du Frontend React Native aux API Spring Boot du Backend.</li>
+<li>Développement du système d'importation de documents médicaux EHR (PDF) vers MinIO.</li>
+<li>Mise en place de la messagerie instantanée patient-médecin et du système d'alertes en temps réel.</li>
+</ul>
+</li>
+<li><strong>Sprint 4 : Analyse IA, Tests de validation et Finitions (Semaines 7-8)</strong>
+<ul>
+<li>Développement et raccordement du service IA Python pour l'analyse des symptômes et le calcul du risque clinique.</li>
+<li>Campagne de tests unitaires, d'intégration et tests d'utilisabilité.</li>
+<li>Corrections ergonomiques, finitions de l'UI et rédaction de la documentation finale.</li>
+</ul>
+</li>
+</ul>
+<h4 id="242-diagramme-de-gantt-textuel">2.4.2. Diagramme de Gantt Textuel</h4>
+<pre class="hljs"><code><div>Activités / Semaines      | S1 | S2 | S3 | S4 | S5 | S6 | S7 | S8 |
+-------------------------------------------------------------------
+Cadrage &amp; Spécifications  |====|    |    |    |    |    |    |    |
+Architecture &amp; Docker Setup|====|====|    |    |    |    |    |    |
+Développement Backend core|    |====|====|    |    |    |    |    |
+Conception UI/UX Mobile   |    |    |====|====|    |    |    |    |
+Intégration API &amp; MinIO   |    |    |    |    |====|====|    |    |
+Module Messagerie &amp; Alertes|   |    |    |    |====|====|    |    |
+Service IA (Python &amp; NLP) |    |    |    |    |    |====|====|    |
+Tests QA &amp; Optimisation   |    |    |    |    |    |    |====|====|
+Documentation &amp; Rapport   |    |    |    |    |    |    |    |====|
+</div></code></pre>
+<hr>
+<hr>
+<h1 id="chapitre-v---description-des-interfaces-section-3">CHAPITRE V - DESCRIPTION DES INTERFACES (SECTION 3)</h1>
+<h2 id="3-description-des-interfaces-de-lapplication-mobile">3. DESCRIPTION DES INTERFACES DE L'APPLICATION MOBILE</h2>
+<p>La conception visuelle de HealthTrack AI repose sur une approche haut de gamme nommée <strong>« Refined Moroccan Luxury »</strong>. L'objectif graphique est de concevoir une application moderne et épurée, s'inspirant de l'identité visuelle de notre logo : une main de Khamsa contenant des motifs d'arabesques, une étoile marocaine et une ligne de rythme cardiaque.
+L'application adopte principalement un <strong>mode sombre</strong> extrêmement premium. La couleur de fond dominante est un vert forêt profond (<code>#0D2318</code>), contrastée par des cartes au ton émeraude sombre (<code>#122B1E</code>) délimitées par de fines bordures vert clair translucides (<code>#1A9B6C22</code>). Les boutons d'action principaux et les éléments mis en avant utilisent une couleur de pouvoir dorée chaleureuse (<code>#C9A84C</code>). L'élégance typographique est assurée par l'utilisation de la police avec empattement <strong>Playfair Display</strong> pour les titres et la police sans empattement <strong>Inter</strong> pour le corps du texte.</p>
+<hr>
+<h3 id="31-espace-dauthentification-auth-workspace">3.1. Espace d'Authentification (Auth Workspace)</h3>
+<p>L'espace d'authentification prépare l'expérience utilisateur à travers une identité visuelle immersive et rassurante.</p>
+<h4 id="311-écran-de-démarrage-splashscreen">3.1.1. Écran de Démarrage (SplashScreen)</h4>
+<ul>
+<li><strong>Description visuelle :</strong> Cet écran de transition s'affiche sur un fond vert forêt profond (<code>#0D2318</code>). Au centre géométrique de l'écran, le logo officiel de HealthTrack AI est affiché sous forme d'une Khamsa stylisée. Directement en dessous, le nom de l'application « HealthTrack AI » s'inscrit en lettres dorées avec la typographie Playfair Display (taille 32px), suivi du slogan « Your health. Your data. Your control. » rédigé en police Inter d'un ton vert atténué (<code>#4A7A66</code>). Une texture d'arabesque vectorielle très subtile est appliquée en arrière-plan à 6% d'opacité.</li>
+<li><strong>Fonctionnalité :</strong> Cet écran s'affiche pendant une durée fixe de 2 secondes avant de rediriger automatiquement l'utilisateur vers l'écran de connexion par un fondu doux de 150ms.</li>
+</ul>
+<h4 id="312-écran-de-connexion-loginscreen">3.1.2. Écran de Connexion (LoginScreen)</h4>
+<ul>
+<li><strong>Description visuelle :</strong> Cet écran est structuré en deux parties. La partie supérieure présente une version compacte du logo et du nom de l'application. La partie centrale est occupée par un bloc carte (<code>#122B1E</code>) aux angles arrondis (20px), surmonté d'une bordure dorée très fine. Le titre « Welcome back » est écrit en Playfair Display blanc, accompagné du sous-titre « Sign in to continue » en Inter vert pastel.</li>
+<li><strong>Fonctionnalité :</strong> L'utilisateur saisit son adresse e-mail et son mot de passe. Les champs de saisie possèdent un style personnalisé : lorsque l'utilisateur sélectionne un champ, une lueur verte émeraude se diffuse autour de la bordure. Le mot de passe peut être affiché ou masqué en appuyant sur un bouton représenté par un œil doré. Un bouton doré (« Sign In ») permet de soumettre le formulaire avec un effet haptique. En bas d'écran, un sélecteur de langue discret permet de basculer l'interface entre le français, l'arabe et l'anglais.</li>
+</ul>
+<h4 id="313-écran-dinscription-registerscreen">3.1.3. Écran d'Inscription (RegisterScreen)</h4>
+<ul>
+<li><strong>Description visuelle :</strong> Cet écran conserve la même charte graphique émeraude et dorée que la connexion, mais intègre un formulaire divisé en deux étapes distinctes pour ne pas surcharger visuellement l'utilisateur. Deux indicateurs circulaires en haut du bloc (l'un doré actif, l'autre vert inactif) marquent la progression.</li>
+<li><strong>Fonctionnalité :</strong>
+<ul>
+<li><em>Étape 1 :</em> Saisie des données d'identité fondamentales (Nom, Prénom, Email, Mot de passe). L'activation du bouton doré « Next » déclenche une transition vers la seconde étape.</li>
+<li><em>Étape 2 :</em> Sélection du rôle à l'aide de deux grands boutons tactiles représentant des cartes d'activité. La première carte affiche un pictogramme de patient et la seconde un stéthoscope pour les professionnels de santé. La sélection d'un rôle applique une bordure dorée lumineuse à la carte correspondante. L'utilisateur indique ensuite sa date de naissance et valide son inscription en cliquant sur le bouton « Create Account ». Un bouton de retour sous forme de flèche dorée permet de revenir à l'étape précédente.</li>
+</ul>
+</li>
+</ul>
+<h4 id="314-écran-de-récupération-forgotpasswordscreen">3.1.4. Écran de Récupération (ForgotPasswordScreen)</h4>
+<ul>
+<li><strong>Description visuelle :</strong> Une mise en page centrée et minimaliste affichant une flèche de retour dorée dans l'angle supérieur gauche, le titre « Reset Password » et une consigne textuelle invitant à renseigner l'adresse e-mail.</li>
+<li><strong>Fonctionnalité :</strong> L'utilisateur fournit son adresse e-mail pour recevoir un lien de réinitialisation. Lors de la soumission réussie, une animation dynamique de coche de validation verte s'affiche au centre d'une carte émeraude pour confirmer l'envoi du message.</li>
+</ul>
+<hr>
+<h3 id="32-espace-patient-patient-workspace">3.2. Espace Patient (Patient Workspace)</h3>
+<p>Cet espace est structuré autour d'un menu de navigation inférieur personnalisé composé de cinq onglets tactiles : <em>Tableau de bord</em>, <em>Dossier</em>, <em>Symptômes</em>, <em>Localisateur</em> et <em>Profil</em>. L'onglet actif se distingue par un pictogramme et un libellé dorés, soulignés par un petit point lumineux doré.</p>
+<h4 id="321-tableau-de-bord-dashboardscreen">3.2.1. Tableau de Bord (DashboardScreen)</h4>
+<ul>
+<li><strong>Description visuelle :</strong> L'en-tête salue chaleureusement le patient par son prénom (« Good morning, Youssef ») en Playfair Display blanc, avec la date du jour affichée en caractères plus petits et de couleur vert atténué. Une icône de cloche de notification dorée est visible en haut à droite.
+<ul>
+<li><em>Ligne des indicateurs rapides (Quick Stats Row) :</em> Un ruban défilant horizontalement affiche quatre indicateurs de santé : fréquence cardiaque, nombre de pas quotidiens, heures de sommeil et indice de risque calculé par l'IA. Ces blocs possèdent un arrière-plan <code>#122B1E</code> avec la valeur affichée en grand format doré. Le bloc de risque utilise une couleur sémantique (vert pour un risque faible, orange pour modéré, rouge pour élevé).</li>
+<li><em>Section des recommandations de l'IA :</em> Un carrousel de cartes affiche des conseils personnalisés illustrés par des pictogrammes ciblés (sommeil, nutrition, activité physique).</li>
+<li><em>Section des dernières mesures :</em> Un tableau synthétise les trois derniers enregistrements, précisant la source de la mesure (saisie manuelle, capteur ou dossier médical importé) via des badges colorés discrets.</li>
+</ul>
+</li>
+</ul>
+<h4 id="322-formulaire-de-saisie-manualentryscreen">3.2.2. Formulaire de Saisie (ManualEntryScreen)</h4>
+<ul>
+<li><strong>Description visuelle :</strong> Un formulaire de saisie structuré en sections verticales séparées par des en-têtes dorés écrits en majuscules (police Inter, 11px).</li>
+<li><strong>Fonctionnalité :</strong> Le patient peut renseigner manuellement ses constantes physiques :
+<ul>
+<li><em>Constantes Vitales :</em> Pouls (bpm), Tension artérielle systolique et diastolique (mmHg), Glycémie (mg/dL).</li>
+<li><em>Activité Physique :</em> Nombre de pas, minutes d'activité, calories dépensées.</li>
+<li><em>Sommeil :</em> Heure de coucher, heure de réveil et un indicateur de qualité sous forme d'étoiles dorées (évaluation de 1 à 5).
+Les entrées numériques intègrent leurs unités de mesure alignées à droite du champ. Le bouton doré « Save Record » situé en bas d'écran enregistre les données et fournit un retour tactile vibrant pour confirmer la réussite.</li>
+</ul>
+</li>
+</ul>
+<h4 id="323-gestion-du-dossier-médical-électronique-ehrimportscreen">3.2.3. Gestion du Dossier Médical Électronique (EHRImportScreen)</h4>
+<ul>
+<li><strong>Description visuelle :</strong> Cette interface propose trois grandes cartes d'action de couleur émeraude avec des icônes explicites : « Import PDF » (icône document), « Import FHIR / HL7 » (icône code de flux) et « Scan Document » (icône appareil photo). La partie inférieure présente la liste des dossiers de santé importés.</li>
+<li><strong>Fonctionnalité :</strong> Le patient peut importer des documents médicaux externes. Chaque fichier de la liste affiche son nom, sa date de chargement et un badge d'état coloré géré par le traitement asynchrone de l'IA (orange pour « PENDING », vert pour « DONE », rouge pour « FAILED »). L'utilisateur peut appuyer sur un document pour ouvrir la visionneuse PDF intégrée, partager le document ou le supprimer.</li>
+</ul>
+<h4 id="324-historique-médical-healthhistoryscreen">3.2.4. Historique Médical (HealthHistoryScreen)</h4>
+<ul>
+<li><strong>Description visuelle :</strong> Une liste chronologique épurée des enregistrements du patient. En haut, une barre de filtres horizontaux (« All », « Vitals », « Activity », « Sleep », « EHR ») se présente sous forme de puces dorées ou vertes.</li>
+<li><strong>Fonctionnalité :</strong> Les mesures sont regroupées par date. Une pression sur une ligne d'enregistrement déploie un bloc de détails révélant l'historique complet et les notes associées.</li>
+</ul>
+<h4 id="325-diagnostic-de-symptômes-par-lia-symptominputscreen">3.2.5. Diagnostic de Symptômes par l'IA (SymptomInputScreen)</h4>
+<ul>
+<li><strong>Description visuelle :</strong> Un sélecteur d'onglets permet de choisir le mode de saisie : texte, voix ou image.</li>
+<li><strong>Fonctionnalité :</strong>
+<ul>
+<li>Le mode <em>texte</em> offre une zone de saisie libre (« Décrivez ce que vous ressentez... »).</li>
+<li>Le mode <em>voix</em> affiche un bouton de microphone doré qui pulse au rythme de l'enregistrement avec une animation de forme d'onde sonore.</li>
+<li>Le mode <em>image</em> permet de charger une photo de symptôme ou d'ordonnance.
+L'activation du bouton doré « Get AI Evaluation » déclenche l'affichage d'un encadré de diagnostic de l'IA (<code>AIResultCard</code>) composé d'un badge de risque coloré, d'un résumé clinique textuel, de trois recommandations classées par ordre de priorité et d'un raccourci direct pour partager ce rapport d'analyse avec son médecin traitant.</li>
+</ul>
+</li>
+</ul>
+<h4 id="326-localisateur-de-services-de-santé-healthservicelocatorscreen">3.2.6. Localisateur de Services de Santé (HealthServiceLocatorScreen)</h4>
+<ul>
+<li><strong>Description visuelle :</strong> Une carte géographique interactive (occupant la moitié supérieure de l'écran) surmontée d'un volet d'information coulissant depuis le bas (bottom sheet).</li>
+<li><strong>Fonctionnalité :</strong> Le volet présente une barre de recherche et la liste des établissements de santé à proximité (cliniques, hôpitaux, pharmacies). Chaque ligne affiche le nom de l'établissement, sa catégorie, sa distance en kilomètres et un indicateur d'ouverture. En sélectionnant un établissement, le volet se déploie pour afficher l'adresse complète, les horaires d'ouverture, le numéro de téléphone et un bouton doré pour lancer le guidage routier.</li>
+</ul>
+<hr>
+<h3 id="33-espace-médecin-doctor-workspace">3.3. Espace Médecin (Doctor Workspace)</h3>
+<p>L'espace destiné aux médecins privilégie la clarté opérationnelle et la mise en évidence des alertes prioritaires.</p>
+<h4 id="331-page-daccueil-et-gestion-des-alertes-doctorhomescreen">3.3.1. Page d'Accueil et Gestion des Alertes (DoctorHomeScreen)</h4>
+<ul>
+<li><strong>Description visuelle :</strong> L'en-tête affiche le nom du professionnel (« Dr. El Alaoui ») et sa spécialité clinique.
+<ul>
+<li><em>File d'attente des alertes (Alert Queue) :</em> Un carrousel défilant de cartes horizontales met en évidence les dossiers jugés urgents par l'IA. Les fiches de patients classées en niveau « CRITICAL » arborent une bordure de couleur rouge vif à effet de halo lumineux pour capter immédiatement l'attention du médecin.</li>
+<li><em>Liste des patients suivis :</em> Une liste verticale des patients assignés, avec une barre de recherche. Chaque ligne présente la photo de profil (ou les initiales du patient sur fond doré), le nom, l'âge, la date de la dernière consultation et un indicateur coloré symbolisant son niveau de risque. Un clic redirige vers la fiche médicale complète.</li>
+</ul>
+</li>
+</ul>
+<h4 id="332-dossier-clinique-patient-patientfilescreen">3.3.2. Dossier Clinique Patient (PatientFileScreen)</h4>
+<ul>
+<li><strong>Description visuelle :</strong> Cet écran présente l'identité du patient, son âge, son groupe sanguin, ainsi qu'une flèche de retour et un raccourci doré pour exporter le dossier au format PDF. Le contenu est organisé en cinq onglets internes : <em>Vue d'ensemble</em>, <em>Mesures</em>, <em>Analyses IA</em>, <em>Notes</em> et <em>Ordonnances</em>.</li>
+<li><strong>Fonctionnalité :</strong>
+<ul>
+<li><em>Vue d'ensemble :</em> Regroupe les données administratives clés du patient, sa courbe de risque globale et un indicateur d'évolution de l'état clinique (amélioration, stabilité ou dégradation).</li>
+<li><em>Mesures :</em> Affiche l'historique complet des constantes vitales sous forme de graphiques de tendances de santé interactifs (Victory Native).</li>
+<li><em>Analyses IA :</em> Historique des rapports générés par l'IA avec leur statut de validation par le médecin : « PENDING REVIEW » (doré), « CONFIRMED » (vert), « CORRECTED » (bleu) ou « REJECTED » (rouge).</li>
+<li><em>Notes :</em> Zone d'affichage des commentaires cliniques de l'équipe soignante. Un bouton flottant circulaire doré (« + ») ouvre un éditeur en plein écran pour rédiger et enregistrer une nouvelle note clinique.</li>
+<li><em>Ordonnances :</em> Historique des prescriptions médicales délivrées avec un indicateur de validité (« ACTIVE » en vert ou « EXPIRED » en gris). Un bouton flottant permet de générer une nouvelle ordonnance à l'aide d'un formulaire structuré (médicament, posologie, fréquence, durée).</li>
+</ul>
+</li>
+</ul>
+<h4 id="333-validation-des-analyses-de-lia-aireviewscreen">3.3.3. Validation des Analyses de l'IA (AIReviewScreen)</h4>
+<ul>
+<li><strong>Description visuelle :</strong> Cette interface affiche le rapport complet élaboré par les algorithmes de l'IA : indicateur de risque, taux de fiabilité représenté par un anneau de progression doré, résumé de situation, liste des anomalies détectées et recommandations générées.</li>
+<li><strong>Fonctionnalité :</strong> En bas d'écran, trois boutons d'action permettent au médecin de prendre une décision : « Confirm » (bouton vert plein), « Correct » (bouton orange à contour) ou « Reject » (bouton rouge à contour). Si le médecin choisit « Correct », deux champs de saisie apparaissent pour renseigner le diagnostic rectifié et ajouter des commentaires cliniques justificatifs avant de valider via le bouton doré « Submit Review ».</li>
+</ul>
+<hr>
+<h3 id="34-espace-administrateur-admin-workspace">3.4. Espace Administrateur (Admin Workspace)</h3>
+<p>Cet espace fournit aux administrateurs de la plateforme les indicateurs de supervision technique et fonctionnelle.</p>
+<h4 id="341-tableau-de-bord-dadministration-admindashboardscreen">3.4.1. Tableau de Bord d'Administration (AdminDashboardScreen)</h4>
+<ul>
+<li><strong>Description visuelle :</strong> Le titre « Admin Panel » est affiché en haut de page.
+<ul>
+<li><em>Grille d'indicateurs (2x2) :</em> Affiche quatre statistiques globales (Utilisateurs enregistrés, Patients actifs, Médecins agréés, Analyses de l'IA du jour). Chaque statistique présente sa valeur en grand format doré, son intitulé vert pastel et un symbole thématique associé.</li>
+<li><em>Section des courbes analytiques :</em> Présente un graphique linéaire doré (Victory Native) illustrant la croissance du nombre d'utilisateurs sur les sept derniers jours, ainsi qu'un graphique à barres horizontales vert et or détaillant la répartition des analyses d'IA par catégorie.</li>
+<li><em>Flux d'activité récent :</em> Une liste verticale consigne les derniers événements techniques ou fonctionnels de la plateforme (création de compte, alerte générée, validation médicale).</li>
+</ul>
+</li>
+</ul>
+<h4 id="342-gestion-des-comptes-utilisateurs-usermanagementscreen">3.4.2. Gestion des Comptes Utilisateurs (UserManagementScreen)</h4>
+<ul>
+<li><strong>Description visuelle :</strong> Une zone de recherche textuelle associée à quatre filtres d'affichage sous forme de boutons (« All », « Patients », « Doctors », « Admins »).</li>
+<li><strong>Fonctionnalité :</strong> Affiche la liste des profils enregistrés avec leur nom, leur rôle et leur statut (« ACTIVE » ou « SUSPENDED »). Un appui long ou un balayage latéral (swipe) sur une ligne fait apparaître trois boutons d'action rapide : suspendre, supprimer ou afficher les détails. Un bouton flottant doré « + » ouvre un formulaire d'invitation pour intégrer un nouveau médecin par e-mail.</li>
+</ul>
+<h4 id="343-configuration-des-modules-dia-aimoduleconfigscreen">3.4.3. Configuration des Modules d'IA (AIModuleConfigScreen)</h4>
+<ul>
+<li><strong>Description visuelle :</strong> Liste ordonnée des différents services intelligents actifs (détection des anomalies, évaluation des risques, vision par ordinateur, traitement automatique des langues pour les symptômes, extraction EHR).</li>
+<li><strong>Fonctionnalité :</strong> Chaque module dispose d'un interrupteur d'activation (switch personnalisé devenant vert clair une fois activé), d'un curseur (slider) doré pour ajuster le seuil de confiance requis pour les analyses de l'IA, et d'un bouton « Configure » qui ouvre un volet de paramétrage avancé. Ce volet permet de définir finement les valeurs seuils pour chaque indicateur de santé avant d'enregistrer la configuration via le bouton doré dédié.</li>
+</ul>
+<hr>
+<hr>
+<h1 id="conclusion-générale-et-perspectives">CONCLUSION GÉNÉRALE ET PERSPECTIVES</h1>
+<h2 id="conclusion-générale">CONCLUSION GÉNÉRALE</h2>
+<p>Le projet <strong>HealthTrack AI</strong> représente une avancée significative dans la digitalisation et la modernisation du suivi médical et du bien-être pour le marché marocain. En intégrant de manière cohérente des technologies de pointe telles que React Native pour l'application mobile multiplateforme, Spring Boot 3 pour le serveur d'API robuste et sécurisé, et un microservice d'intelligence artificielle en Python, la plateforme répond avec efficacité aux défis de la communication médicale et du tri clinique.</p>
+<p>La force de cette solution réside dans sa capacité à collecter, stocker et analyser des constantes de santé complexes tout en maintenant un très haut niveau de sécurité et de confidentialité grâce à une architecture découplée, un chiffrement de bout en bout et un stockage objet autonome MinIO (S3). De plus, l'adoption de la charte graphique premium « Refined Moroccan Luxury » apporte une dimension esthétique et culturelle unique, favorisant l'adoption de l'application tant par les patients que par les praticiens de santé.</p>
+<p>En tant que membre chargé de la gestion du projet, du contrôle qualité et de la documentation, ce travail m'a permis d'appréhender toute la complexité de la coordination d'un projet informatique pluridisciplinaire. L'application des méthodologies agiles (Scrum) et des standards de versioning (GitFlow) a été déterminante pour maintenir le cap des livrables et garantir la synergie globale de l'équipe de développement.</p>
+<h2 id="perspectives">PERSPECTIVES</h2>
+<p>Bien que HealthTrack AI présente des fondations robustes et un ensemble fonctionnel complet, plusieurs axes d'évolution scientifique et technique peuvent être envisagés pour étendre sa portée :</p>
+<ol>
+<li><strong>Intégration d'objets connectés physiques (IoT) :</strong> Actuellement basé sur des saisies manuelles ou des imports EHR, le système gagnerait à s'intégrer directement avec des API de wearables du marché (Apple HealthKit, Google Fit, montres connectées Fitbit ou Garmin) pour collecter de manière passive et continue les constantes physiologiques des patients.</li>
+<li><strong>Interopérabilité et Standard HL7 FHIR avancé :</strong> Pousser plus loin le support de la norme d'échange internationale HL7 FHIR afin de permettre une intégration bilatérale transparente avec les grands systèmes d'information hospitaliers (SIH) et les dossiers médicaux partagés nationaux au Maroc.</li>
+<li><strong>Module de Téléconsultation Intégré :</strong> Enrichir la boîte de messagerie instantanée patient-médecin par une fonctionnalité de téléconsultation vidéo chiffrée de bout en bout, permettant au médecin de réaliser ses consultations directement au sein de la plateforme suite à une alerte d'IA critique.</li>
+<li><strong>Déploiement Cloud et Passage à l'Échelle (Scaling) :</strong> Migrer l'infrastructure conteneurisée Docker locale vers un orchestrateur de conteneurs Kubernetes hébergé sur un cloud souverain au Maroc, afin de garantir la haute disponibilité du service, la redondance des données de santé et un traitement asynchrone performant face à un grand volume d'utilisateurs.</li>
+<li><strong>Amélioration continue des modèles d'IA :</strong> Entraîner les modèles NLP de diagnostic sur des dialectes locaux supplémentaires (comme l'arabe marocain - Darija) en format textuel et vocal pour accroître l'accessibilité de la solution à toutes les franges de la population.</li>
+</ol>
+<hr>
+<hr>
+<h1 id="bibliographie">BIBLIOGRAPHIE</h1>
+<ol>
+<li><strong>Spring Boot &amp; Architecture Logicielle</strong>
+<ul>
+<li>Walls, C. (2022). <em>Spring in Action, Sixth Edition</em>. Manning Publications.</li>
+<li>Documentation officielle de Spring Framework &amp; Spring Boot 3.3.x. URL : <a href="https://spring.io/projects/spring-boot">https://spring.io/projects/spring-boot</a></li>
+</ul>
+</li>
+<li><strong>Développement Mobile &amp; React Native</strong>
+<ul>
+<li>Expo SDK 51 Documentation. URL : <a href="https://docs.expo.dev/">https://docs.expo.dev/</a></li>
+<li>React Navigation v6 Documentation. URL : <a href="https://reactnavigation.org/">https://reactnavigation.org/</a></li>
+<li>Abramov, D., Wieruch, R. (2023). <em>State Management in React Native using Redux Toolkit</em>. O'Reilly Media.</li>
+</ul>
+</li>
+<li><strong>Bases de données &amp; Stockage Objet</strong>
+<ul>
+<li>Banker, K. (2021). <em>MongoDB in Action, Second Edition</em>. Manning Publications.</li>
+<li>MinIO Object Storage Documentation &amp; S3 API Reference. URL : <a href="https://min.io/docs/minio/linux/index.html">https://min.io/docs/minio/linux/index.html</a></li>
+</ul>
+</li>
+<li><strong>Intelligence Artificielle &amp; Traitement NLP</strong>
+<ul>
+<li>FastAPI Framework Documentation. URL : <a href="https://fastapi.tiangolo.com/">https://fastapi.tiangolo.com/</a></li>
+<li>Jurafsky, D., Martin, J. H. (2023). <em>Speech and Language Processing (3rd ed. draft)</em>. Prentice Hall.</li>
+</ul>
+</li>
+<li><strong>Gestion de Projet Agile &amp; Scrum</strong>
+<ul>
+<li>Schwaber, K., Beedle, M. (2002). <em>Agile Software Development with Scrum</em>. Prentice Hall.</li>
+<li>Chacon, S., Straub, B. (2014). <em>Pro Git, Second Edition</em>. Apress (GitFlow branching strategies).</li>
+</ul>
+</li>
+</ol>
+<hr>
+<hr>
+<h1 id="annexes">ANNEXES</h1>
+<h2 id="annexe-a--fichier-docker-compose-dinfrastructure-locale-docker-composeyml">ANNEXE A : Fichier Docker Compose d'infrastructure locale (<code>docker-compose.yml</code>)</h2>
+<p>Ce fichier permet de déployer de manière conteneurisée l'ensemble de la pile de services nécessaires à l'exécution locale du projet HealthTrack AI.</p>
+<pre class="hljs"><code><div><span class="hljs-attr">version:</span> <span class="hljs-string">&#x27;3.8&#x27;</span>
+
+<span class="hljs-attr">services:</span>
+  <span class="hljs-comment"># Base de données MongoDB</span>
+  <span class="hljs-attr">mongodb:</span>
+    <span class="hljs-attr">image:</span> <span class="hljs-string">mongo:6.0</span>
+    <span class="hljs-attr">container_name:</span> <span class="hljs-string">healthtrack-mongodb</span>
+    <span class="hljs-attr">ports:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;27017:27017&quot;</span>
+    <span class="hljs-attr">volumes:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">mongodb_data:/data/db</span>
+    <span class="hljs-attr">environment:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">MONGO_INITDB_DATABASE=healthtrack</span>
+    <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span>
+
+  <span class="hljs-comment"># Base de données Redis pour le cache</span>
+  <span class="hljs-attr">redis:</span>
+    <span class="hljs-attr">image:</span> <span class="hljs-string">redis:7.0-alpine</span>
+    <span class="hljs-attr">container_name:</span> <span class="hljs-string">healthtrack-redis</span>
+    <span class="hljs-attr">ports:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;6379:6379&quot;</span>
+    <span class="hljs-attr">volumes:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">redis_data:/data</span>
+    <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span>
+
+  <span class="hljs-comment"># Serveur de stockage objet MinIO (compatible S3)</span>
+  <span class="hljs-attr">minio:</span>
+    <span class="hljs-attr">image:</span> <span class="hljs-string">minio/minio:RELEASE.2024-01-18T22-51-58Z</span>
+    <span class="hljs-attr">container_name:</span> <span class="hljs-string">healthtrack-minio</span>
+    <span class="hljs-attr">ports:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;9000:9000&quot;</span>      <span class="hljs-comment"># API S3</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;9001:9001&quot;</span>      <span class="hljs-comment"># Console Web d&#x27;administration</span>
+    <span class="hljs-attr">environment:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">MINIO_ROOT_USER=admin</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">MINIO_ROOT_PASSWORD=minioadminpassword</span>
+    <span class="hljs-attr">volumes:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">minio_data:/data</span>
+    <span class="hljs-attr">command:</span> <span class="hljs-string">server</span> <span class="hljs-string">/data</span> <span class="hljs-string">--console-address</span> <span class="hljs-string">&quot;:9001&quot;</span>
+    <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span>
+
+<span class="hljs-attr">volumes:</span>
+  <span class="hljs-attr">mongodb_data:</span>
+  <span class="hljs-attr">redis_data:</span>
+  <span class="hljs-attr">minio_data:</span>
+</div></code></pre>
+<h2 id="annexe-b--exemple-de-charge-utile-json---rapport-de-diagnostic-de-lia">ANNEXE B : Exemple de charge utile JSON - Rapport de diagnostic de l'IA</h2>
+<p>Le flux ci-dessous représente le format des données JSON renvoyées par le microservice d'IA Python au backend Spring Boot après l'évaluation des symptômes physiques d'un patient.</p>
+<pre class="hljs"><code><div><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;analysisId&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;ai-report-893021&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;patientId&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;p-001&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;evaluatedSymptoms&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;fatigue&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;palpitations&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;insomnie&quot;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;riskAssessment&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;level&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;MODERATE&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;confidenceScore&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0.825</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;riskTrend&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;STABLE&quot;</span>
+  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;clinicalSummary&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Le patient présente des épisodes de palpitations associés à un manque de sommeil chronique et à une fatigue accrue sur les dernières 48 heures. La variabilité du rythme cardiaque reste dans des limites acceptables mais nécessite une surveillance accrue.&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;anomaliesDetected&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">&quot;metric&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;HEART_RATE&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;description&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Légère tachycardie transitoire détectée lors de l&#x27;enregistrement de 08:30 (98 bpm).&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;severity&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;WARNING&quot;</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">&quot;metric&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;SLEEP&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;description&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Durée moyenne de sommeil inférieure à 6 heures sur les 3 derniers jours.&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;severity&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;INFO&quot;</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;recommendations&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">&quot;category&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;SLEEP&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;priority&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;HIGH&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;message&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Assurer un minimum de 7.5 heures de repos nocturne continu.&quot;</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">&quot;category&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;HYDRATION&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;priority&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;MEDIUM&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;message&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Limiter la consommation d&#x27;excitants (caféine, thé) après 16:00 et s&#x27;hydrater régulièrement.&quot;</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">&quot;category&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;ACTIVITY&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;priority&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;LOW&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;message&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Maintenir une activité physique modérée (marche) de 30 minutes, à distance du coucher.&quot;</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;validationStatus&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;PENDING_REVIEW&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;timestamp&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2026-06-17T14:30:00Z&quot;</span>
+<span class="hljs-punctuation">}</span>
+</div></code></pre>
+
+</body>
+</html>

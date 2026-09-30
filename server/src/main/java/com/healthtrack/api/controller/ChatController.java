@@ -5,6 +5,8 @@ import com.healthtrack.api.dto.ChatMessageResponse;
 import com.healthtrack.api.entity.ChatMessage;
 import com.healthtrack.api.entity.User;
 import com.healthtrack.api.service.ChatService;
+import com.healthtrack.api.entity.AccessLogEntry;
+import com.healthtrack.api.service.AccessLogService;
 import com.healthtrack.api.service.FileStorageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
@@ -24,6 +26,7 @@ public class ChatController {
 
     private final ChatService chatService;
     private final FileStorageService fileStorageService;
+    private final AccessLogService accessLogService;
 
     @PreAuthorize("hasRole('PATIENT')")
     @GetMapping("/patient/messages")
@@ -61,6 +64,8 @@ public class ChatController {
             @PathVariable String patientId
     ) {
         List<ChatMessage> messages = chatService.getMessagesForDoctor(doctor, patientId);
+        accessLogService.record(patientId, doctor.getId(), doctor.getRole().name(),
+                AccessLogEntry.AccessAction.READ_MESSAGES, "messages:" + messages.size());
         return ResponseEntity.ok(toResponse(messages));
     }
 
