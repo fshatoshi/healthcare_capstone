@@ -27,7 +27,10 @@ public class AuthenticationService {
                 .lastName(request.getLastName())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .role(User.Role.valueOf(request.getRole().toUpperCase()))
+                // V01 (sécurité) : le rôle n'est JAMAIS pris depuis la requête.
+                // L'inscription publique crée uniquement des PATIENT.
+                // Les comptes DOCTOR/ADMIN sont provisionnés par un administrateur.
+                .role(User.Role.PATIENT)
                 .dob(request.getDob())
                 .language(request.getLanguage() != null ? request.getLanguage() : "fr")
                 .build();
