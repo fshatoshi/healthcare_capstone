@@ -82,6 +82,15 @@ const isIgnorableApiError = (message?: string | null): boolean => {
   return text.includes('403') || text.includes('401') || text.includes('404');
 };
 
+const EHR_LABELS: Record<string, string> = {
+  heartRate: 'Frequence cardiaque',
+  bloodPressure: 'Tension arterielle',
+  bloodGlucose: 'Glycemie',
+  steps: 'Pas',
+  sleepDuration: 'Sommeil',
+};
+const ehrMeasureLabel = (key: string): string => EHR_LABELS[key] || key;
+
 export const EHRImportScreen: React.FC<EHRImportScreenProps> = ({ navigation }) => {
   const dispatch = useAppDispatch();
   const healthState = useAppSelector((s) => s.health);
@@ -415,6 +424,20 @@ export const EHRImportScreen: React.FC<EHRImportScreenProps> = ({ navigation }) 
                   Confiance extraction: {(latestResult.extracted.confidence * 100).toFixed(0)}%
                 </Text>
               )}
+              {latestResult.extracted.measurements.length > 0 && (
+                <View style={styles.measureList}>
+                  <Text style={styles.measureListTitle}>Constantes extraites</Text>
+                  {latestResult.extracted.measurements.map((m, i) => (
+                    <View key={i} style={styles.measureRow}>
+                      <Text style={styles.measureLabel}>{ehrMeasureLabel(m.key)}</Text>
+                      <Text style={styles.measureValue}>
+                        {String(m.value)}{m.unit ? ' ' + m.unit : ''}
+                      </Text>
+                    </View>
+                  ))}
+                </View>
+              )}
+
               <View style={styles.confirmBtnWrap}>
                 <GoldButton
                   title="Confirm & Save to Medical Record"
@@ -548,6 +571,11 @@ const styles = StyleSheet.create({
   statusLabel: { ...typography.body, color: colors.textPrimary },
   extractHint: { ...typography.bodySmall, color: colors.textMuted },
   previewCard: { gap: 8, paddingVertical: 14 },
+  measureList: { marginTop: 6, gap: 6, borderTopWidth: 1, borderTopColor: colors.bgCardBorder, paddingTop: 10 },
+  measureListTitle: { ...typography.bodySmall, color: colors.gold, fontFamily: 'Inter_600SemiBold', marginBottom: 2 },
+  measureRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
+  measureLabel: { ...typography.bodySmall, color: colors.textMuted },
+  measureValue: { ...typography.bodySmall, color: colors.textPrimary, fontFamily: 'Inter_600SemiBold' },
   previewSummary: { ...typography.body, color: colors.textPrimary },
   previewMeta: { ...typography.bodySmall, color: colors.textMuted },
   confirmBtnWrap: { marginTop: 8 },

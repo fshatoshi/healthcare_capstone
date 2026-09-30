@@ -13,6 +13,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { colors, typography, spacing, radius } from '../../theme';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { HealthMetricCard } from '../../components/common/HealthMetricCard';
+import { TrendChart } from '../../components/charts/TrendChart';
 import { GreenCard } from '../../components/common/GreenCard';
 import { SectionHeader } from '../../components/common/SectionHeader';
 import {
@@ -46,6 +47,25 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ navigation }) 
   const latestVitals = records.find((r) => r.type === 'VITALS');
   const latestActivity = records.find((r) => r.type === 'ACTIVITY');
   const latestSleep = records.find((r) => r.type === 'SLEEP');
+
+  // Series chronologiques pour les courbes de tendance (constantes VITALS)
+  const vitalsAsc = [...records]
+    .filter((r) => r.type === 'VITALS')
+    .sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
+  const hrSeries = vitalsAsc
+    .map((r) => r.heartRate)
+    .filter((v): v is number => typeof v === 'number');
+  const glucoseSeries = vitalsAsc
+    .map((r) => r.bloodGlucose)
+    .filter((v): v is number => typeof v === 'number');
+  const systolicSeries = vitalsAsc
+    .map((r) => {
+      const bp = r.bloodPressure;
+      if (!bp) return undefined;
+      const n = parseInt(String(bp).split('/')[0], 10);
+      return isNaN(n) ? undefined : n;
+    })
+    .filter((v): v is number => typeof v === 'number');
 
   const riskLevel = (() => {
     const hr = latestVitals?.heartRate || 0;
@@ -122,6 +142,16 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ navigation }) 
               semanticColor={riskColors[riskLevel]}
             />
           </ScrollView>
+
+          {/* Trends */}
+          {records.length > 0 && (
+            <>
+              <SectionHeader title="Trends" style={{ marginTop: spacing.lg }} />
+              <TrendChart title="Heart Rate" unit="bpm" data={hrSeries} color={colors.danger} />
+              <TrendChart title="Blood Glucose" unit="mg/dL" data={glucoseSeries} color={colors.gold} />
+              <TrendChart title="Blood Pressure (sys)" unit="mmHg" data={systolicSeries} color={colors.info} />
+            </>
+          )}
 
           {/* Quick Actions */}
           <SectionHeader title="Quick Actions" style={{ marginTop: spacing.lg }} />
