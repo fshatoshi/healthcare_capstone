@@ -86,7 +86,12 @@ export const CustomTabBar: React.FC<CustomTabBarProps> = ({ state, navigation, t
               route={tabRoute}
               focused={focused}
               onPress={() => {
-                if (!focused) {
+                const tabEvent = navigation.emit({
+                  type: 'tabPress',
+                  target: route.key,
+                  canPreventDefault: true,
+                });
+                if (!focused && !tabEvent.defaultPrevented) {
                   navigation.navigate(route.name);
                 }
               }}
