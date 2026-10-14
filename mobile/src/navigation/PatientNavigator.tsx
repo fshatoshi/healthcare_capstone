@@ -48,7 +48,15 @@ export const PatientNavigator = () => {
       tabBar={(props) => <CustomTabBar {...props} tabRoutes={TAB_ROUTES} />}
     >
       <Tab.Screen name="Dashboard" component={DashboardScreen} />
-      <Tab.Screen name="Records" component={RecordsNavigator} />
+      <Tab.Screen
+        name="Records"
+        component={RecordsNavigator}
+        listeners={({ navigation }) => ({
+          tabPress: () => {
+            navigation.navigate('Records', { screen: 'RecordsHub' });
+          },
+        })}
+      />
       <Tab.Screen name="Symptoms" component={SymptomNavigator} />
       <Tab.Screen name="Locator" component={HealthServiceLocatorScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
