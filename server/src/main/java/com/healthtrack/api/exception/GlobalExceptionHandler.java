@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.core.AuthenticationException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,6 +33,25 @@ public class GlobalExceptionHandler {
         error.put("status", "error");
         error.put("message", ex.getMessage());
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+
+    // Identifiants invalides / non authentifie -> 401 (et non 500).
+    // Message generique: on ne precise pas si c'est l'email ou le mot de passe.
+    @ExceptionHandler(AuthenticationException.class)
+    public ResponseEntity<Map<String, String>> handleAuthentication(AuthenticationException ex) {
+        Map<String, String> error = new HashMap<>();
+        error.put("status", "error");
+        error.put("message", "Invalid credentials");
+        return new ResponseEntity<>(error, HttpStatus.UNAUTHORIZED);
+    }
+
+    // Authentifie mais non autorise -> 403.
+    @ExceptionHandler(AccessDeniedException.class)
+    public ResponseEntity<Map<String, String>> handleAccessDenied(AccessDeniedException ex) {
+        Map<String, String> error = new HashMap<>();
+        error.put("status", "error");
+        error.put("message", "Access denied");
+        return new ResponseEntity<>(error, HttpStatus.FORBIDDEN);
     }
 
     // Filet de sécurité : on journalise le détail côté serveur, mais on ne le renvoie
