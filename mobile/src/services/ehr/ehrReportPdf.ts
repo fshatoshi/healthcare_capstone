@@ -85,7 +85,7 @@ export const buildExtractionReportHtml = (
               : '<div style="width:64px; height:64px; border-radius:12px; background:#0f172a; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700;">HT</div>'
           }
           <div>
-            <h1 style="margin:0; color:#0f172a;">HealthTrack AI</h1>
+            <h1 style="margin:0; color:#0f172a;">CardioGuard AI</h1>
             <p style="margin:2px 0 0; color:#475569;">Rapport d'extraction EHR - ${esc(now)}</p>
           </div>
         </div>
@@ -132,9 +132,9 @@ export const buildExtractionReportHtml = (
         <ul>${renderList((result.warnings || []).map(String))}</ul>
 
         <p style="margin-top: 24px; color:#64748b; font-size: 12px; border-top:1px solid #e2e8f0; padding-top: 10px;">
-          Document genere automatiquement par HealthTrack AI.
+          Document genere automatiquement par CardioGuard AI.
         </p>
-        <div class="wm">HealthTrack AI - Confidentiel</div>
+        <div class="wm">CardioGuard AI - Confidentiel</div>
       </body>
     </html>
   `;
