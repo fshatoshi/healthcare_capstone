@@ -79,7 +79,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
                 resizeMode="contain"
               />
             </View>
-            <Text style={styles.wordmark}>HealthTrack</Text>
+            <Text style={styles.wordmark}>CardioGuard</Text>
           </Animated.View>
 
           <Animated.View style={[styles.card, { opacity: fadeAnim, transform: [{ translateY: slideAnim }] }]}>
@@ -125,7 +125,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
             />
 
             <View style={styles.registerRow}>
-              <Text style={styles.registerText}>New to HealthTrack? </Text>
+              <Text style={styles.registerText}>New to CardioGuard? </Text>
               <TouchableOpacity onPress={() => navigation.navigate('Register')}>
                 <Text style={styles.registerLink}>Create account</Text>
               </TouchableOpacity>

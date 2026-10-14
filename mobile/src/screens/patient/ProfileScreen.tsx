@@ -94,7 +94,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ navigation }) => {
             { label: 'Notifications', icon: 'notifications-outline' },
             { label: 'Privacy & Security', icon: 'lock-closed-outline' },
             { label: 'Language', icon: 'language-outline' },
-            { label: 'About HealthTrack AI', icon: 'information-circle-outline' },
+            { label: 'About CardioGuard AI', icon: 'information-circle-outline' },
           ].map((item, i) => (
             <TouchableOpacity 
               key={i} 
@@ -121,7 +121,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ navigation }) => {
           </View>
         </TouchableOpacity>
         
-        <Text style={styles.version}>HealthTrack AI v1.0.0</Text>
+        <Text style={styles.version}>CardioGuard AI v1.0.0</Text>
       </ScrollView>
 
       {/* Ephemeral Toast */}

@@ -70,7 +70,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ navigation }) => {
             resizeMode="contain"
           />
         </View>
-        <Text style={styles.appName}>HealthTrack</Text>
+        <Text style={styles.appName}>CardioGuard</Text>
         <Text style={styles.tagline}>Your health. Your data. Your control.</Text>
       </Animated.View>
 

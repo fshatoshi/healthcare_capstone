@@ -1,4 +1,4 @@
-# 🏥 HealthTrack AI — Intelligent Wellness Monitoring
+# 🏥 CardioGuard AI - Intelligent Wellness Monitoring
 
 > **Academic Year 2024-2025**  
 > **2CS Capstone Project**  
@@ -8,12 +8,12 @@
 
 ## 🌟 Project Overview
 
-**HealthTrack AI** is a premium, AI-driven wellness monitoring mobile and web platform designed to bridge the gap between daily preventive wellness and professional healthcare. 
+**CardioGuard AI** is a premium, AI-driven wellness monitoring mobile and web platform designed to bridge the gap between daily preventive wellness and professional healthcare. 
 
 ### 1.1 Project Context & Problem Statement
 Healthcare systems in developing regions face significant challenges: overcrowded hospitals, medical deserts, and late detection of chronic conditions (e.g., diabetes, hypertension). Concurrently, smartphone penetration is growing rapidly. 
 
-HealthTrack AI leverages the powerful sensors already present in modern smartphones (cameras, accelerometers, microphones) to deliver **preventive health tools without requiring expensive wearable devices or constant internet access**. It offers a secure, offline-first, and culturally adapted solution tailored to the Moroccan and regional markets.
+CardioGuard AI leverages the powerful sensors already present in modern smartphones (cameras, accelerometers, microphones) to deliver **preventive health tools without requiring expensive wearable devices or constant internet access**. It offers a secure, offline-first, and culturally adapted solution tailored to the Moroccan and regional markets.
 
 ### 1.2 Key Objectives
 *   **Track:** Capture physical activity, sleep quality, and heart rate through manual logs, phone sensors (camera rPPG, accelerometer), and clinical documents.
@@ -39,7 +39,7 @@ HealthTrack AI leverages the powerful sensors already present in modern smartpho
 
 ## 🛠️ Architecture & Technical Stack
 
-HealthTrack AI uses a decoupled, secure, and modern microservices architecture.
+CardioGuard AI uses a decoupled, secure, and modern microservices architecture.
 
 | Layer | Technology | Rationale |
 | :--- | :--- | :--- |
