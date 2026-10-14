@@ -1,0 +1,11 @@
+@startuml
+left to right direction
+actor Client
+actor Administrateur
+
+rectangle "Système de Vente" {
+  Client --> (Acheter un produit)
+  Client --> (Consulter le catalogue)
+  (Gérer les stocks) <-- Administrateur
+}
+@enduml

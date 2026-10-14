@@ -9,7 +9,9 @@
 .env
 .env.local
 
-# --- Backend (Spring Boot / Gradle) ---
+# --- Backend (Spring Boot / Gradle / Maven) ---
+target/
+*.class
 .gradle/
 build/
 bin/
@@ -38,3 +40,7 @@ ios/Pods/
 infra/mongo-data/
 infra/minio-data/
 infra/redis-data/
+
+# --- AI Service : données & modèles entraînés (hors dépôt) ---
+ai-service/data/raw/
+ai-service/models/*.joblib

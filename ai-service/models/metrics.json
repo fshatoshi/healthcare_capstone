@@ -1,0 +1,76 @@
+{
+  "rows_raw": 70000,
+  "rows_clean": 68592,
+  "dropped": 1408,
+  "features": [
+    "age_years",
+    "gender",
+    "height",
+    "weight",
+    "ap_hi",
+    "ap_lo",
+    "bmi",
+    "cholesterol",
+    "gluc",
+    "smoke",
+    "alco",
+    "active"
+  ],
+  "chosen_model": "grad_boost",
+  "results": [
+    {
+      "model": "logreg",
+      "accuracy": 0.7278,
+      "recall": 0.6773,
+      "precision": 0.7486,
+      "f1": 0.7112,
+      "roc_auc": 0.7927,
+      "confusion_matrix": [
+        [
+          5388,
+          1544
+        ],
+        [
+          2190,
+          4597
+        ]
+      ]
+    },
+    {
+      "model": "random_forest",
+      "accuracy": 0.7316,
+      "recall": 0.6767,
+      "precision": 0.7553,
+      "f1": 0.7139,
+      "roc_auc": 0.7982,
+      "confusion_matrix": [
+        [
+          5444,
+          1488
+        ],
+        [
+          2194,
+          4593
+        ]
+      ]
+    },
+    {
+      "model": "grad_boost",
+      "accuracy": 0.7347,
+      "recall": 0.6941,
+      "precision": 0.7508,
+      "f1": 0.7213,
+      "roc_auc": 0.8009,
+      "confusion_matrix": [
+        [
+          5368,
+          1564
+        ],
+        [
+          2076,
+          4711
+        ]
+      ]
+    }
+  ]
+}

@@ -16,6 +16,9 @@ public class HealthRecordService {
     private final HealthRecordRepository repository;
 
     public HealthRecord saveRecord(HealthRecord record, User user) {
+        // V04 (sécurité) : ignorer tout id fourni par le client pour empêcher
+        // l'écrasement du dossier d'un autre utilisateur (mass assignment).
+        record.setId(null);
         record.setUser(user);
         if (record.getTimestamp() == null) {
             record.setTimestamp(LocalDateTime.now());
