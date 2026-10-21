@@ -1,0 +1,19 @@
+CardioGuard AI - Sprint 1 backlog (Business Logic & AI)
+Brouillon local (Session 3, hors ligne).
+
+But du Sprint 1 : une vraie IA locale de risque cardiovasculaire, entrainee et exposee par une API.
+
+Taches :
+[x] S1-1  Récuperer et placer le dataset local (cardio_train.csv, 70 000 patients) dans ai-service/data/raw/
+[x] S1-2  Script d'ingestion + nettoyage des données (age en annees, filtrage tensions/taille/poids aberrantes, calcul BMI)
+[x] S1-3  Entraîner et comparer 3 modeles (LogReg, Random Forest, Gradient Boosting), split 80/20 stratifie
+[x] S1-4  Sélectionner le meilleur par ROC-AUC (Gradient Boosting, AUC ~0.80) et evaluer sur jeu de test
+[x] S1-5  Exporter le modèle en artefact autonome (models/cardio_risk_model.joblib) + metriques (metrics.json)
+[x] S1-6  Microservice FastAPI : endpoint POST /analyze/predict (entree = constantes, sortie = probabilite + niveau)
+[x] S1-7  Chargement du modele (singleton) + endpoint /model-info et /health
+[x] S1-8  Mapping probabilité -> niveau de risque (STABLE / AMBER / RED) avec seuils prudents (0.45 / 0.70)
+[x] S1-9  Endpoints Spring : POST /ai/cardio-risk et GET /ai/history, appel du microservice (AiServiceClient)
+[x] S1-10 Persistance de chaque analyse en base (entite AIAnalysis) et mapping vers l'enum de risque
+
+Definition of Done : le modele s'entraine et s'evalue en local, l'API renvoie un niveau de risque
+pour un patient donné, chaque analyse est persistée. Aucune API externe payante.
