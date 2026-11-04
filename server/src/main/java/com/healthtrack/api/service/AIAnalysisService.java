@@ -33,7 +33,7 @@ public class AIAnalysisService {
         String modelName = String.valueOf(prediction.getOrDefault("model_name", "unknown"));
         List<String> factors = (List<String>) prediction.getOrDefault("top_factors", List.of());
 
-        String summary = String.format("Risque %s (probabilité %.0f%%) — modèle %s.",
+        String summary = String.format("Risque %s (probabilité %.0f%%), modèle %s.",
                 aiRisk, probability * 100, modelName);
         String recommendations = factors.isEmpty()
                 ? "Aucun facteur aggravant marquant détecté. Maintenir une hygiène de vie saine."
