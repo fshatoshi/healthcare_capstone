@@ -1,1 +1,0 @@
-// Implements HealthRecordService: validation, persistence, aggregation

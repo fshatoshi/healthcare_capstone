@@ -1,1 +1,0 @@
-// @Document(users): userId, email, passwordHash, role, language, createdAt

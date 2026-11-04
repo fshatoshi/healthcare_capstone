@@ -1,1 +1,0 @@
-// @Document: category enum, message, priority, isRead, createdAt

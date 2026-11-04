@@ -1,1 +1,0 @@
-﻿// Doctor endpoints: patient list, file access, validate AI result, add notes

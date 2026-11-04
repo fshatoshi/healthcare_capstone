@@ -1,1 +1,0 @@
-// Returns correct parser based on file type: PDF, HL7, FHIR

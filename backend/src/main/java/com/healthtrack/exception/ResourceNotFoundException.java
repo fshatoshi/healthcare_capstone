@@ -1,1 +1,0 @@
-// Thrown when a requested resource does not exist in MongoDB

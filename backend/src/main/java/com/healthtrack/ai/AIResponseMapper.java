@@ -1,1 +1,0 @@
-// Maps AI service JSON response to AIAnalysisResult entity

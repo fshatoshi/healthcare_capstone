@@ -1,1 +1,0 @@
-// MongoRepository<HealthRecord>: findByFileIdAndTimestampBetween

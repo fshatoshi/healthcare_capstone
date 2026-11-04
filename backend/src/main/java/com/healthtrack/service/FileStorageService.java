@@ -1,1 +1,0 @@
-// Interface: upload and download from MinIO

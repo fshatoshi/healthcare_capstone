@@ -1,1 +1,0 @@
-// @Document: doctorId, patientId, medications list, dosage, validUntil

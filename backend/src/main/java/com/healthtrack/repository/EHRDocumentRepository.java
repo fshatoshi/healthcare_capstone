@@ -1,1 +1,0 @@
-// MongoRepository<EHRDocument>: findByFileId, updateParseStatus

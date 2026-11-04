@@ -1,1 +1,0 @@
-// HAPI FHIR client: parses FHIR R4 bundles into HealthRecord list

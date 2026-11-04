@@ -1,1 +1,0 @@
-// @Document(health_records): recordId, fileId, timestamp, source enum

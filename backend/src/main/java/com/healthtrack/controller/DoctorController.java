@@ -1,1 +1,0 @@
-// GET /api/doctor/patients, validate AI result, notes, prescriptions

@@ -1,1 +1,0 @@
-// Fetches patient file, saves AI validation record

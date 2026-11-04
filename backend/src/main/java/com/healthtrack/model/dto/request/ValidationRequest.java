@@ -1,1 +1,0 @@
-// { resultId, verdict, correctedDiagnosis, notes }

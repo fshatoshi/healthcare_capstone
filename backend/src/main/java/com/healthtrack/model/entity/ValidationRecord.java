@@ -1,1 +1,0 @@
-// @Document: validationId, doctorId, analysisResultId, verdict, notes

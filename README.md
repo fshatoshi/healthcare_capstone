@@ -141,7 +141,7 @@ The app finds the local backend automatically: on a phone running Expo Go (same 
 
 ```
 ├── ai-service/              # Python FastAPI microservice (AI models, OCR, MediaPipe)
-├── backend/                 # Spring Boot 3 Java backend (core API, security)
+├── server/                  # Spring Boot 3 Java backend (core API, security)
 ├── mobile/                  # React Native / Expo application (frontend)
 │   ├── assets/              # App assets (Logo, arabesque watermarks, etc.)
 │   └── src/

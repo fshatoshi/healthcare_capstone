@@ -1,1 +1,0 @@
-// Interface: save record, get history, aggregate metrics

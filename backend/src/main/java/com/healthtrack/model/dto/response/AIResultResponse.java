@@ -1,1 +1,0 @@
-// { resultId, riskLevel, summary, recommendations[], requiresValidation }

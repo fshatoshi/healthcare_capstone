@@ -1,1 +1,0 @@
-// @Document: userId, channel enum, title, body, isDelivered, sentAt
