@@ -1,1 +1,0 @@
-﻿// AI endpoints: trigger analysis, get results, get recommendations

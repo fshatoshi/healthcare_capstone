@@ -1,1 +1,0 @@
-// { steps, sleepHours, heartRate, weight, bloodPressure, timestamp }

@@ -1,1 +1,0 @@
-// GET/POST /api/patients - patient profile management

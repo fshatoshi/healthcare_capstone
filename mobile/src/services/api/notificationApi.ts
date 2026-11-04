@@ -1,1 +1,0 @@
-﻿// Fetch in-app notifications and mark as read

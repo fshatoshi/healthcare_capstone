@@ -1,1 +1,0 @@
-// Interface: parse EHR, extract records, create patient state snapshot

@@ -1,1 +1,0 @@
-// Calls Apache Tika for PDF text, FHIR parser, HL7 bridge

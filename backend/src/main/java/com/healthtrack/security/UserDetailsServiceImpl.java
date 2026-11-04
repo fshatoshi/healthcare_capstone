@@ -1,1 +1,0 @@
-// Loads UserDetails from MongoDB for Spring Security

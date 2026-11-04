@@ -1,1 +1,0 @@
-// CORS config, multipart upload size limits

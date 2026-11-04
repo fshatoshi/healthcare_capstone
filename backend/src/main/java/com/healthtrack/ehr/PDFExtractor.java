@@ -1,1 +1,0 @@
-// Apache Tika: extracts text from PDF, sends to AI for structuring

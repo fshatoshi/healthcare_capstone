@@ -1,1 +1,0 @@
-// Doctor view: patient info + latest snapshot + pending alerts count

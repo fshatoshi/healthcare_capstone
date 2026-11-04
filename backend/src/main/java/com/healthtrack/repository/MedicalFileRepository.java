@@ -1,1 +1,0 @@
-// MongoRepository<MedicalFile>: findByPatientId
