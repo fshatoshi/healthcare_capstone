@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -20,6 +20,8 @@ import {
   mockRecommendations,
 } from '../../utils/mockData';
 import { fetchHealthRecords } from '../../store/slices/healthSlice';
+import { fetchAiHistory } from '../../store/slices/aiSlice';
+import { CardioRiskModal, CardioRiskInitial } from '../../components/patient/CardioRiskModal';
 
 interface DashboardScreenProps {
   navigation: any;
@@ -35,13 +37,17 @@ const getGreeting = () => {
 export const DashboardScreen: React.FC<DashboardScreenProps> = ({ navigation }) => {
   const dispatch = useAppDispatch();
   const fadeAnim = useRef(new Animated.Value(0)).current;
-  const { firstName } = useAppSelector(s => s.auth);
+  const { firstName, dob } = useAppSelector(s => s.auth);
   const unreadCount = useAppSelector(s => s.notifications?.unreadCount || 0);
   const records = useAppSelector((s) => s.health.metrics);
+  const aiResults = useAppSelector((s) => s.ai.results);
+  const aiRunning = useAppSelector((s) => s.ai.running);
+  const [showAssess, setShowAssess] = useState(false);
 
   useEffect(() => {
     Animated.timing(fadeAnim, { toValue: 1, duration: 500, useNativeDriver: true }).start();
     dispatch(fetchHealthRecords());
+    dispatch(fetchAiHistory());
   }, [dispatch]);
 
   const latestVitals = records.find((r) => r.type === 'VITALS');
@@ -67,19 +73,33 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ navigation }) 
     })
     .filter((v): v is number => typeof v === 'number');
 
-  const riskLevel = (() => {
-    const hr = latestVitals?.heartRate || 0;
-    const glucose = latestVitals?.bloodGlucose || 0;
-    if (hr >= 120 || glucose >= 200) return 'HIGH';
-    if (hr >= 100 || glucose >= 140) return 'MODERATE';
-    return 'LOW';
-  })();
+  // Dernier resultat du vrai modele IA (POST /ai/cardio-risk, historise).
+  const latestAi = aiResults[0];
+  const riskLevel = latestAi?.riskLevel ?? null; // STABLE | MODERATE | CRITICAL
 
   const riskColors: Record<string, string> = {
-    LOW: colors.success,
-    MODERATE: colors.warning,
-    HIGH: colors.danger,
     STABLE: colors.success,
+    MODERATE: colors.warning,
+    CRITICAL: colors.danger,
+  };
+  const riskColor = riskLevel ? riskColors[riskLevel] : colors.textMuted;
+  const riskDisplay = riskLevel ?? '--';
+  const confidencePct = latestAi ? Math.round(latestAi.confidence * 100) : null;
+
+  // Preremplissage du formulaire depuis les dernieres constantes connues.
+  const bpParts = latestVitals?.bloodPressure
+    ? String(latestVitals.bloodPressure).split('/')
+    : [];
+  const assessInitial: CardioRiskInitial = {
+    apHi: bpParts[0] ? parseInt(bpParts[0], 10) || undefined : undefined,
+    apLo: bpParts[1] ? parseInt(bpParts[1], 10) || undefined : undefined,
+    ageYears: (() => {
+      if (!dob) return undefined;
+      const d = new Date(dob);
+      if (isNaN(d.getTime())) return undefined;
+      const age = Math.floor((Date.now() - d.getTime()) / (365.25 * 24 * 3600 * 1000));
+      return age > 0 && age < 120 ? age : undefined;
+    })(),
   };
 
   const today = new Date().toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
@@ -136,10 +156,10 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ navigation }) 
             />
             <HealthMetricCard
               icon="shield-outline"
-              iconColor={riskColors[riskLevel]}
-              value={riskLevel}
+              iconColor={riskColor}
+              value={riskDisplay}
               label="Risk Score"
-              semanticColor={riskColors[riskLevel]}
+              semanticColor={riskColor}
             />
           </ScrollView>
 
@@ -173,7 +193,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ navigation }) 
               onPress={() => navigation.navigate('Records', { screen: 'ManualEntry' })}
             >
               <View style={[styles.actionIcon, { backgroundColor: '#1A9B6C22' }]}>
-                <Ionicons name="add-circle" size={24} color={colors.secondary} />
+                <Ionicons name="add-circle" size={24} color={colors.green} />
               </View>
               <Text style={styles.actionText}>Add Record</Text>
             </TouchableOpacity>
@@ -181,9 +201,24 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ navigation }) 
 
           {/* AI Analysis */}
           <SectionHeader title="AI Analysis" style={{ marginTop: spacing.lg }} />
-          <TouchableOpacity style={styles.aiCard2} activeOpacity={0.85} onPress={() => {}}>
-            <View style={styles.aiDotGreen} />
-            <Text style={styles.aiText2}>Your health profile is stable</Text>
+          <TouchableOpacity
+            style={styles.aiCard2}
+            activeOpacity={0.85}
+            onPress={() => setShowAssess(true)}
+          >
+            <View style={[styles.aiDotGreen, { backgroundColor: riskColor }]} />
+            <View style={{ flex: 1 }}>
+              <Text style={styles.aiText2}>
+                {aiRunning
+                  ? 'Analyse en cours...'
+                  : latestAi
+                  ? latestAi.summary
+                  : 'Lancer une evaluation de votre risque cardiovasculaire'}
+              </Text>
+              {confidencePct !== null && !aiRunning && (
+                <Text style={styles.aiConfidence}>Confiance {confidencePct}%</Text>
+              )}
+            </View>
             <Ionicons name="chevron-forward" size={16} color={colors.gold} />
           </TouchableOpacity>
 
@@ -218,6 +253,13 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ navigation }) 
 
         </ScrollView>
       </Animated.View>
+
+      <CardioRiskModal
+        visible={showAssess}
+        initial={assessInitial}
+        onClose={() => setShowAssess(false)}
+        onDone={() => setShowAssess(false)}
+      />
     </SafeAreaView>
   );
 };
@@ -248,6 +290,7 @@ const styles = StyleSheet.create({
   },
   aiDotGreen: { width: 10, height: 10, borderRadius: 5, backgroundColor: colors.success },
   aiText2: { ...typography.body, color: colors.textPrimary, flex: 1, fontFamily: 'Inter_500Medium' },
+  aiConfidence: { ...typography.bodyXSmall, color: colors.textMuted, marginTop: 2 },
   emptyState: {
     alignItems: 'center', justifyContent: 'center',
     padding: 40, marginTop: 20,
